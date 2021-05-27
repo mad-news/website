@@ -288,7 +288,8 @@ img {
 }
 
 .section_padding_100 {
-    padding: 10px 0;
+    padding-top: 10px 0;
+    padding-bottom: 30px 0;
 }
 
 .section_padding_50 {
