@@ -36,7 +36,6 @@
 	}
 
 	if (ISSET($_REQUEST["CreateAuthor"])){
-		$autID=$_REQUEST["autID"];
 		$autFName=$_REQUEST["autFName"];
 		$autLName=$_REQUEST["autLName"];
 		$autPName=$_REQUEST["autPName"];
@@ -58,6 +57,7 @@
 	// ---- Main Prog
 	If($_SESSION["Admin"] != 0){
 		fLogout();
+		fGetNextID();
 		
 		echo "<h1 align=\"center\"> Insert New Author Record </h1>";
 		fFormCreateAuthor();
@@ -80,8 +80,6 @@
 	function fFormCreateAuthor(){
 		echo "<div style=\" margin: auto; width: 172px;\">\n";
 		echo "<form action='UpdateAuthor.php' method='post'>\n";
-		echo "autID<br/>";
-		echo "<input type='text' name='autID' value=''>\n";
 		echo "<br/>autFName<br/>";
 		echo "<input type='text' name='autFName' value=''>\n";
 		echo "<br/>autLName<br/>";
@@ -92,12 +90,36 @@
 		echo "<input type='text' name='autPhone' value=''>\n";
 		echo "<br/>autEmail<br/>";
 		echo "<input type='text' name='autEmail' value=''>\n";
-		echo "<br/>autGender<br/>";
-		echo "<input type='text' name='autGender ( 1 = M, 0 = F)' value=''>\n";
+		echo "<br/>autGender (1 = M, 0 = F)<br/>";
+		echo "<input type='text' name='autGender' value=''>\n";
 		echo "<br/><br><input type='submit' name='CreateAuthor' value='CreateAuthor'>\n";
 		echo "<input type='reset'>";
 		echo "</form>\n";
 		echo "</div>\n\n";
+	}
+	
+	//--------------------------------------------------------------------------
+	
+	function fGetNextID(){
+		global $serverName, $userName, $userPassword, $DBName;
+		global $autID;
+		
+		// Connect to the database
+		$conn = mysqli_connect($serverName, $userName, $userPassword, $DBName);
+		if (!$conn) {
+			die("Connection failed: " . mysqli_connect_error());
+		}
+		
+		$myQuery = "SELECT MAX(autID) FROM tauthors;";
+		$result = mysqli_query($conn, $myQuery);
+		
+		If (mysqli_num_rows($result) == 1){
+			$row = mysqli_fetch_array($result);
+			$autID = $row[0] + 1;
+			echo $autID;
+		}
+		
+		mysqli_close($conn);
 	}
 	
 	//--------------------------------------------------------------------------
@@ -118,7 +140,7 @@
 		$result = mysqli_query($conn, $myQuery);
 		//If there is a result...
 		if ($result){
-			echo "This Room was added $autID, $autFName, $autLName, $autPName, $autPhone, $autEmail, $autGender";
+			echo "This author was added $autID, $autFName, $autLName, $autPName, $autPhone, $autEmail, $autGender";
 		} else {
 			echo "Insert failed! " .mysqli_error($conn);
 		
