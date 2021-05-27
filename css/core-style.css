@@ -288,8 +288,11 @@ img {
 }
 
 .section_padding_100 {
-    padding-top: 10px 0;
-    padding-bottom: 30px 0;
+    padding: 10px 0;
+    padding-top: 10px;
+    padding-right: 0px;
+    padding-bottom: 50px;
+    padding-left: 0px;
 }
 
 .section_padding_50 {
