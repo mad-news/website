@@ -1290,3 +1290,8 @@ textarea.form-control {
 .copywrite-text p > a {
     color: #fff;
 }
+
+ol li{
+        list-style-type:decimal;
+        list-style-position:inside;
+}
