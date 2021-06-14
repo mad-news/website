@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title><?php echo $post_title; ?></title>
+    <title></title>
 
     <!-- Favicon  -->
     <link rel="icon" href="../img/core-img/logo.jpg">
@@ -57,7 +57,8 @@
 		
 		if (mysqli_num_rows($result) > 0){
 			while($row = mysqli_fetch_assoc($result)){
-				$post_title = $row["artTitle"];
+				$post_title = $row["artTitle"];  
+                echo "<script>document.title=\"".$post_title."\"</script>";
 			}
 		}
 		
@@ -376,7 +377,7 @@
 
     <section class="single-post-area">
         <!-- Single Post Title -->
-        <div class="single-post-title bg-img background-overlay" style="background-image: url(../img/bg-img/5.jpg);">
+        <div class="single-post-title bg-img background-overlay" style="background-image: url(img/0.jpg);">
             <div class="container h-100">
                 <div class="row h-100 align-items-end">
                     <div class="col-12">

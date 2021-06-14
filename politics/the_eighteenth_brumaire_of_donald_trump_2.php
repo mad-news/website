@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>麦迪讯 | 新闻标题 News Title</title>
+    <title></title>
 
     <!-- Favicon  -->
     <link rel="icon" href="../img/core-img/logo.jpg">
@@ -24,6 +24,151 @@
 </head>
 
 <body>
+
+<?php
+	session_start();
+	// --- Declare Variable ---------------------------------------------------------------------------------------
+	$serverName = "localhost";
+	$DBName = "mad_news";
+	$userName = "root";
+	$userPassword = "";
+
+	$post_ID = "101";
+	$post_title = "";
+	$post_authorName = "";
+	$post_date = "";
+	$post_typeCHIName = "";
+	$post_typeENGName = "";
+	$post_cons = array(array(), array());
+	$post_ims = array(array(), array(), array());
+	
+	$type = array(array(), array());
+
+	function fgetInfo(){
+		global $serverName, $userName, $userPassword, $DBName;
+		global $post_ID, $post_title, $post_authorName, $post_date, $post_typeCHIName, $post_typeENGName;
+
+		$conn = mysqli_connect($serverName, $userName, $userPassword, $DBName);
+		if (!$conn) {
+			die("Connection failed: " . mysqli_connect_error());
+		}
+		
+		$myQuery = "SELECT artTitle FROM tarticles WHERE artID = ". $post_ID ."";
+		$result = mysqli_query($conn, $myQuery);
+		
+		if (mysqli_num_rows($result) > 0){
+			while($row = mysqli_fetch_assoc($result)){
+				$post_title = $row["artTitle"];
+                echo "<script>document.title=\"".$post_title."\"</script>";
+			}
+		}
+		
+		$myQuery2 = "SELECT autPName FROM tauthors WHERE autID = (SELECT artAutID FROM tarticles WHERE artID = ". $post_ID .")";
+		$result2 = mysqli_query($conn, $myQuery2);
+		
+		if (mysqli_num_rows($result2) > 0){
+			while($row = mysqli_fetch_assoc($result2)){
+				$post_authorName = $row["autPName"];
+			}
+		}
+			
+		$myQuery3 = "SELECT artDate FROM tarticles WHERE artID = ". $post_ID ."";
+		$result3 = mysqli_query($conn, $myQuery3);
+		
+		if (mysqli_num_rows($result3) > 0){
+			while($row = mysqli_fetch_assoc($result3)){
+				$post_date = $row["artDate"];
+			}
+		}
+			
+		$myQuery4 = "SELECT tyCHIName, tyENGName FROM ttypes WHERE tyID = (SELECT artTyID FROM tarticles WHERE artID = ". $post_ID .")";
+		$result4 = mysqli_query($conn, $myQuery4);
+		
+		if (mysqli_num_rows($result4) > 0){
+			while($row = mysqli_fetch_assoc($result4)){
+				$post_typeCHIName = $row["tyCHIName"];
+				$post_typeENGName = $row["tyENGName"];
+			}
+		}
+		
+		mysqli_close($conn);
+	}
+	
+	function fgetCons(){
+		global $serverName, $userName, $userPassword, $DBName;
+		global $post_ID, $post_cons;
+		
+		$conn = mysqli_connect($serverName, $userName, $userPassword, $DBName);
+		if (!$conn) {
+			die("Connection failed: " . mysqli_connect_error());
+		}
+		
+		$myQuery = "SELECT tcontents.conTitle, tcontents.conPara, tpostcons.posconPriority FROM tcontents INNER JOIN 
+			tpostcons ON tcontents.conID = tpostcons.posconConID WHERE tpostcons.posconArtID = ". $post_ID ."";
+		$result = mysqli_query($conn, $myQuery);
+
+		if (mysqli_num_rows($result) > 0){
+			while($row = mysqli_fetch_assoc($result)){
+				$post_cons[0][$row["posconPriority"]] = $row["conTitle"];
+				$post_cons[1][$row["posconPriority"]] = $row["conPara"];
+			}
+		}
+		
+		mysqli_close($conn);
+	}
+	
+	function fgetIms(){
+		global $serverName, $userName, $userPassword, $DBName;
+		global $post_ID, $post_ims;
+		
+		$conn = mysqli_connect($serverName, $userName, $userPassword, $DBName);
+		if (!$conn) {
+			die("Connection failed: " . mysqli_connect_error());
+		}
+		
+		$myQuery = "SELECT timages.imRef, timages.imAltText, timages.imNote, tpostims.posimPriority FROM timages INNER JOIN 
+			tpostims ON timages.imID = tpostims.posimImID WHERE tpostims.posimArtID = ". $post_ID ."";
+		$result = mysqli_query($conn, $myQuery);
+		
+		if (mysqli_num_rows($result) > 0){
+			while($row = mysqli_fetch_assoc($result)){
+				$post_ims[0][$row["posimPriority"]] = $row["imRef"];
+				$post_ims[1][$row["posimPriority"]] = $row["imAltText"];
+				$post_ims[2][$row["posimPriority"]] = $row["imNote"];
+			}
+		}
+			
+		mysqli_close($conn);
+	}
+	
+	function fgetTypes(){
+		global $serverName, $userName, $userPassword, $DBName;
+		global $type;
+		
+		$conn = mysqli_connect($serverName, $userName, $userPassword, $DBName);
+		if (!$conn) {
+			die("Connection failed: " . mysqli_connect_error());
+		}
+		
+		$myQuery = "SELECT tyCHIName, tyENGName FROM ttypes";
+		$result = mysqli_query($conn, $myQuery);
+		
+		if (mysqli_num_rows($result) > 0){
+			while($row = mysqli_fetch_assoc($result)){
+				array_push($type[0], $row["tyCHIName"]);
+				array_push($type[1], $row["tyENGName"]);
+			}
+		}
+		
+		mysqli_close($conn);
+	}
+
+	fgetInfo();
+	fgetCons();
+	fgetIms();
+	fgetTypes();
+?>
+    
     <!-- Header Area Start -->
     <header class="header-area">
         <div class="top-header">
@@ -183,31 +328,31 @@
                                             </div>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">政治 Politics</a>
+                                            <a class="nav-link" href="#"><?php echo $type[0][0] . " " . $type[1][0]; ?></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">财经 Business</a>
+                                            <a class="nav-link" href="#"><?php echo $type[0][1] . " " . $type[1][1]; ?></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">教育 Education</a>
+                                            <a class="nav-link" href="#"><?php echo $type[0][2] . " " . $type[1][2]; ?></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">社会 Society</a>
+                                            <a class="nav-link" href="#"><?php echo $type[0][3] . " " . $type[1][3]; ?></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">科技 Tech</a>
+                                            <a class="nav-link" href="#"><?php echo $type[0][4] . " " . $type[1][4]; ?></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">体育 Sport</a>
+                                            <a class="nav-link" href="#"><?php echo $type[0][5] . " " . $type[1][5]; ?></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">娱乐 Entertainment</a>
+                                            <a class="nav-link" href="#"><?php echo $type[0][6] . " " . $type[1][6]; ?></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">新闻评论 News</a>
+                                            <a class="nav-link" href="#"><?php echo $type[0][7] . " " . $type[1][7]; ?></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">疫情 Pandemic</a>
+                                            <a class="nav-link" href="#"><?php echo $type[0][8] . " " . $type[1][8]; ?></a>
                                         </li>
                                     </ul>
                                     <!-- Search Form -->
@@ -240,10 +385,11 @@
                         <div class="single-post-title-content">
                             <!-- Post Tag -->
                             <div class="gazette-post-tag">
-                                <a href="#">Entertainment</a>
+                                <a href="#"><?php echo $post_typeENGName; ?></a>
                             </div>
-                            <h2 class="font-pt">新闻标题 News Title</h2>
-                            <p>March 7, 2021</p>
+								<h2 class='font-pt'><?php echo $post_title; ?></h2>;
+                            <p><?php echo $post_date; ?></p>
+                            <p><?php echo "作者：" . $post_authorName; ?></p>
                         </div>
                     </div>
                 </div>
@@ -253,38 +399,59 @@
         <div class="single-post-contents">
             <div class="container">
                 <div class="row justify-content-center">
+                    
                     <div class="col-12 col-md-8">
                         <div class="single-post-text">
-                            <p>新闻正文第一段</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum nunc libero, vitae rutrum nunc porta id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam arcu augue, semper at elementum</p>
-                            <p>nec, cursus nec ante. Vestibulum sed velit scelerisque elit posuere vulputate vel viverra quam. Curabitur laoreet aliquam diam, non mattis arcu feugiat sed. Sed eget pellentesque lacus. Pellentesque in diam vel mauris pretium commodo a ac magna. Suspendisse scelerisque tellus convallis tortor posuere, ut commodo diam blandit. Morbi vel nulla non turpis luctus tempor eu eu urna. Aliquam in lorem a augue mollis volutpat. Nunc iaculis rutrum enim nec viverra. Morbi eleifend metus id tellus luctus, ac porta orci imperdiet.</p>
-                            <p>Morbi efficitur ligula a efficitur mollis. Suspendisse vitae sapien vitae urna eleifend dapibus ut non tortor. In nec metus ac mi ultrices commodo interdum et lacus. Suspendisse potenti. Suspendisse interdum semper dolor nec posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut orci non tortor pretium hendrerit at vel massa. Nunc ut fermentum felis.</p>
-                        </div>
-                    </div>
+                        </div>   
+                    </div>   
+                    
                     <div class="col-12">
                         <div class="single-post-thumb">
-                            <img src="img/1.jpg" alt="">
+                            <center>
+                                <img src=<?php echo $post_ims[0]["1"]; ?> alt=<?php echo $post_ims[1]["1"]; ?>>
+                                <p><?php echo $post_ims[2]["1"]; ?></p>
+                            </center>
                         </div>
                     </div>
+                    
                     <div class="col-12 col-md-8">
                         <div class="single-post-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum nunc libero, vitae rutrum nunc porta id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam arcu augue, semper at elementum</p>
-                            <p>nec, cursus nec ante. Vestibulum sed velit scelerisque elit posuere vulputate vel viverra quam. Curabitur laoreet aliquam diam, non mattis arcu feugiat sed. Sed eget pellentesque lacus. Pellentesque in diam vel mauris pretium commodo a ac magna. Suspendisse scelerisque tellus convallis tortor posuere, ut commodo diam blandit. Morbi vel nulla non turpis luctus tempor eu eu urna. Aliquam in lorem a augue mollis volutpat. Nunc iaculis rutrum enim nec viverra. Morbi eleifend metus id tellus luctus, ac porta orci imperdiet.</p>                            
-                            <p>Morbi efficitur ligula a efficitur mollis. Suspendisse vitae sapien vitae urna eleifend dapibus ut non tortor. In nec metus ac mi ultrices commodo interdum et lacus. Suspendisse potenti. Suspendisse interdum semper dolor nec posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut orci non tortor pretium hendrerit at vel massa. Nunc ut fermentum felis. </p>
+                            <p><?php echo $post_cons[0]["1"]; ?></p>
+                            <p><?php echo $post_cons[1]["1"]; ?></p>
+                            <p><?php echo $post_cons[1]["2"]; ?></p>
+                            <p><?php echo $post_cons[1]["3"]; ?></p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-10">
-                        <div class="single-post-blockquote">
-                            <blockquote>
-                                <h6 class="font-pt mb-0">“Vestibulum nulla diam, sodales sit amet erat vel, mollis iaculis lectus. Suspendisse in rhoncus est. Sed aliquet mauris in efficitur tempor. Proin enim felis, laoreet id viverra at”</h6>
-                            </blockquote>
+                    
+                   <div class="col-12">
+                        <div class="single-post-thumb">
+                            <center>
+                                <img src=<?php echo $post_ims[0]["2"]; ?> alt=<?php echo $post_ims[1]["2"]; ?>>
+                                <p><?php echo $post_ims[2]["2"]; ?></p>
+                            </center>
                         </div>
                     </div>
+                    
                     <div class="col-12 col-md-8">
                         <div class="single-post-text">
-                            <p>Suspendisse vitae sapien vitae urna eleifend dapibus ut non tortor. In nec metus ac mi ultrices commodo interdum et lacus. Suspendisse potenti. Suspendisse interdum semper dolor nec posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut orci non tortor pretium hendrerit at vel massa. Nunc ut fermentum felis.</p>
+                            <p><?php echo $post_cons[0]["4"]; ?></p>
+                            <p><?php echo $post_cons[1]["4"]; ?></p>
                         </div>
                     </div>
+                    
+                    <div class="col-12">
+                        <div class="single-post-thumb">
+                            <center>
+                                <img src=<?php echo $post_ims[0]["3"]; ?> alt=<?php echo $post_ims[1]["3"]; ?>>
+                            </center>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-8">
+                        <div class="single-post-text">
+                        </div>   
+                    </div>   
+                    
                 </div>
             </div>
         </div>

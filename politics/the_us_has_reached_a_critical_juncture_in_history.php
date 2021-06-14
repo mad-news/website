@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>麦迪讯 | 美国走到了历史的风陵渡口</title>
+    <title></title>
 
     <!-- Favicon  -->
     <link rel="icon" href="../img/core-img/logo.jpg">
@@ -24,6 +24,151 @@
 </head>
 
 <body>
+<?php
+	session_start();
+	// --- Declare Variable ---------------------------------------------------------------------------------------
+	$serverName = "localhost";
+	$DBName = "mad_news";
+	$userName = "root";
+	$userPassword = "";
+
+	$post_ID = "102";
+	$post_title = "";
+	$post_authorName = "";
+	$post_date = "";
+	$post_typeCHIName = "";
+	$post_typeENGName = "";
+	$post_cons = array(array(), array());
+	$post_ims = array(array(), array(), array());
+	
+	$type = array(array(), array());
+
+	function fgetInfo(){
+		global $serverName, $userName, $userPassword, $DBName;
+		global $post_ID, $post_title, $post_authorName, $post_date, $post_typeCHIName, $post_typeENGName;
+
+		$conn = mysqli_connect($serverName, $userName, $userPassword, $DBName);
+		if (!$conn) {
+			die("Connection failed: " . mysqli_connect_error());
+		}
+		
+		$myQuery = "SELECT artTitle FROM tarticles WHERE artID = ". $post_ID ."";
+		$result = mysqli_query($conn, $myQuery);
+		
+		if (mysqli_num_rows($result) > 0){
+			while($row = mysqli_fetch_assoc($result)){
+				$post_title = $row["artTitle"];
+                echo "<script>document.title=\"".$post_title."\"</script>";
+			}
+		}
+		
+		$myQuery2 = "SELECT autPName FROM tauthors WHERE autID = (SELECT artAutID FROM tarticles WHERE artID = ". $post_ID .")";
+		$result2 = mysqli_query($conn, $myQuery2);
+		
+		if (mysqli_num_rows($result2) > 0){
+			while($row = mysqli_fetch_assoc($result2)){
+				$post_authorName = $row["autPName"];
+			}
+		}
+			
+		$myQuery3 = "SELECT artDate FROM tarticles WHERE artID = ". $post_ID ."";
+		$result3 = mysqli_query($conn, $myQuery3);
+		
+		if (mysqli_num_rows($result3) > 0){
+			while($row = mysqli_fetch_assoc($result3)){
+				$post_date = $row["artDate"];
+			}
+		}
+			
+		$myQuery4 = "SELECT tyCHIName, tyENGName FROM ttypes WHERE tyID = (SELECT artTyID FROM tarticles WHERE artID = ". $post_ID .")";
+		$result4 = mysqli_query($conn, $myQuery4);
+		
+		if (mysqli_num_rows($result4) > 0){
+			while($row = mysqli_fetch_assoc($result4)){
+				$post_typeCHIName = $row["tyCHIName"];
+				$post_typeENGName = $row["tyENGName"];
+			}
+		}
+		
+		mysqli_close($conn);
+	}
+	
+	function fgetCons(){
+		global $serverName, $userName, $userPassword, $DBName;
+		global $post_ID, $post_cons;
+		
+		$conn = mysqli_connect($serverName, $userName, $userPassword, $DBName);
+		if (!$conn) {
+			die("Connection failed: " . mysqli_connect_error());
+		}
+		
+		$myQuery = "SELECT tcontents.conTitle, tcontents.conPara, tpostcons.posconPriority FROM tcontents INNER JOIN 
+			tpostcons ON tcontents.conID = tpostcons.posconConID WHERE tpostcons.posconArtID = ". $post_ID ."";
+		$result = mysqli_query($conn, $myQuery);
+
+		if (mysqli_num_rows($result) > 0){
+			while($row = mysqli_fetch_assoc($result)){
+				$post_cons[0][$row["posconPriority"]] = $row["conTitle"];
+				$post_cons[1][$row["posconPriority"]] = $row["conPara"];
+			}
+		}
+		
+		mysqli_close($conn);
+	}
+	
+	function fgetIms(){
+		global $serverName, $userName, $userPassword, $DBName;
+		global $post_ID, $post_ims;
+		
+		$conn = mysqli_connect($serverName, $userName, $userPassword, $DBName);
+		if (!$conn) {
+			die("Connection failed: " . mysqli_connect_error());
+		}
+		
+		$myQuery = "SELECT timages.imRef, timages.imAltText, timages.imNote, tpostims.posimPriority FROM timages INNER JOIN 
+			tpostims ON timages.imID = tpostims.posimImID WHERE tpostims.posimArtID = ". $post_ID ."";
+		$result = mysqli_query($conn, $myQuery);
+		
+		if (mysqli_num_rows($result) > 0){
+			while($row = mysqli_fetch_assoc($result)){
+				$post_ims[0][$row["posimPriority"]] = $row["imRef"];
+				$post_ims[1][$row["posimPriority"]] = $row["imAltText"];
+				$post_ims[2][$row["posimPriority"]] = $row["imNote"];
+			}
+		}
+			
+		mysqli_close($conn);
+	}
+	
+	function fgetTypes(){
+		global $serverName, $userName, $userPassword, $DBName;
+		global $type;
+		
+		$conn = mysqli_connect($serverName, $userName, $userPassword, $DBName);
+		if (!$conn) {
+			die("Connection failed: " . mysqli_connect_error());
+		}
+		
+		$myQuery = "SELECT tyCHIName, tyENGName FROM ttypes";
+		$result = mysqli_query($conn, $myQuery);
+		
+		if (mysqli_num_rows($result) > 0){
+			while($row = mysqli_fetch_assoc($result)){
+				array_push($type[0], $row["tyCHIName"]);
+				array_push($type[1], $row["tyENGName"]);
+			}
+		}
+		
+		mysqli_close($conn);
+	}
+
+	fgetInfo();
+	fgetCons();
+	fgetIms();
+	fgetTypes();
+?>
+
+    
     <!-- Header Area Start -->
     <header class="header-area">
         <div class="top-header">
@@ -183,31 +328,31 @@
                                             </div>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">政治 Politics</a>
+                                            <a class="nav-link" href="#"><?php echo $type[0][0] . " " . $type[1][0]; ?></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">财经 Business</a>
+                                            <a class="nav-link" href="#"><?php echo $type[0][1] . " " . $type[1][1]; ?></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">教育 Education</a>
+                                            <a class="nav-link" href="#"><?php echo $type[0][2] . " " . $type[1][2]; ?></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">社会 Society</a>
+                                            <a class="nav-link" href="#"><?php echo $type[0][3] . " " . $type[1][3]; ?></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">科技 Tech</a>
+                                            <a class="nav-link" href="#"><?php echo $type[0][4] . " " . $type[1][4]; ?></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">体育 Sport</a>
+                                            <a class="nav-link" href="#"><?php echo $type[0][5] . " " . $type[1][5]; ?></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">娱乐 Entertainment</a>
+                                            <a class="nav-link" href="#"><?php echo $type[0][6] . " " . $type[1][6]; ?></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">新闻评论 News</a>
+                                            <a class="nav-link" href="#"><?php echo $type[0][7] . " " . $type[1][7]; ?></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">疫情 Pandemic</a>
+                                            <a class="nav-link" href="#"><?php echo $type[0][8] . " " . $type[1][8]; ?></a>
                                         </li>
                                     </ul>
                                     <!-- Search Form -->
@@ -240,11 +385,11 @@
                         <div class="single-post-title-content">
                             <!-- Post Tag -->
                             <div class="gazette-post-tag">
-                                <a href="#">Politics</a>
+                                <a href="#"><?php echo $post_typeENGName; ?></a>
                             </div>
-                            <h2 class="font-pt">美国走到了历史的风陵渡口</h2>
-                            <p>January 7, 2021</p>
-                            <p>作者：红炉主人</p>
+								<h2 class='font-pt'><?php echo $post_title; ?></h2>;
+                            <p><?php echo $post_date; ?></p>
+                            <p><?php echo "作者：" . $post_authorName; ?></p>
                         </div>
                     </div>
                 </div>
@@ -262,55 +407,54 @@
                     
                     <div class="col-12 col-md-8">
                         <div class="single-post-text">
-                            <p><b>作者按</b></p>
-                            <p>今天华盛顿发生的事态是美国历史上史无前例的，<b>从来没有人用这种暴力和决绝的方式强行打断世界上最大的宪政民主国家的选举进程</b>（参议院最终确认选举人投票结果）。毋庸置疑，美国的民主受到了巨大的挑战，华盛顿邮报的评论表示川普应该对今天的国会袭击事件负责并引咎下台。《大西洋月刊》惊呼：这是一场政变！</p>
+                            <p><?php echo $post_cons[0]["1"]; ?></p>
+                            <p><?php echo $post_cons[1]["1"]; ?></p>
                         </div>
                     </div>
                     
                    <div class="col-12">
                         <div class="single-post-thumb">
                             <center>
-                                <img src="img/3_1.jpg" alt="">
+                                <img src=<?php echo $post_ims[0]["1"]; ?> alt=<?php echo $post_ims[1]["1"]; ?>>
                             </center>
                         </div>
                     </div>
                     
                     <div class="col-12 col-md-8">
                         <div class="single-post-text">
-                            <p>暴乱者冲进国会大厦，肆意打砸，安置疑似爆炸物。更有甚者竟然占据参议院讲台，高喊支持特朗普的口号，<b>混乱最终导致有数人伤亡</b>。但是，<b>暴乱者的野蛮行动是徒劳的，他们并不能改变任何事情</b>，特朗普的败选已经是板上钉钉的事实。任凭暴徒们如何捣乱，<b>国会已经决定尊重选举人投票的结果，接下来的事情仅仅是履行程序义务。</b></p>
-                            <p><b>相反，国会大厦事件给了特朗普致命的打击。</b>当天上午，特朗普发表了“拯救美国”的演讲，呼吁到达华府的上万支持者继续战斗。然而，不到两个小时，“拯救美国”变成了“毁灭美国”。由他亲自煽动起来的“铁卫队”干出了超出他预期的暴行。也许<b>特朗普自己都没有想到事态会发展到这种地步，他虽然发推特呼吁他的支持者回家，但他仍然坚持自己赢得了选举。</b>这种言论好比杀人犯谴责自己的行凶的残暴，但依然坚持自己杀人的正当性，对平息事态于事无补。</p>
-                            <p>至此，广大美国人民彻底认清了特朗普集团的危险性。<b>作为国家最高元首，特朗普事实上拥有不止一支仅向他本人效忠的准军事组织</b>，并且在今天发动了试图抢班夺权的暴动。这已经违反了宪法和政党政治的基本原则。正因此，在今晚重新举行的参议院辩论上，<b>原先一小撮支持特朗普的共和党强硬派也开始发生分裂</b>，副总统彭斯，参议院多数党领袖麦康奈尔反对推翻选举结果。佐治亚州现任参议员共和党人凯利·洛夫勒（在本次佐治亚州参议员竞选中失败）决定放弃她对于选举人团投票结果的反对。她表示今天发生的暴行动摇了她的之前的观点，她认为现在必须重塑人民对选举公正和民主自由的信心。在这些反对声中，特朗普最后的幻想也随之烟消云散了。</p>
-                            
+                            <p><?php echo $post_cons[1]["2"]; ?></p>
+                            <p><?php echo $post_cons[1]["3"]; ?></p>
+                            <p><?php echo $post_cons[1]["4"]; ?></p>
                         </div>
                     </div>
                     
                    <div class="col-12">
                         <div class="single-post-thumb">
                             <center>
-                                <img src="img/3_2.jpg" alt="">
-                                <p>（特朗普呼吁其支持者们撤离国会&nbsp&nbsp&nbsp图源：ABC News）</p>                                
+                                <img src=<?php echo $post_ims[0]["2"]; ?> alt=<?php echo $post_ims[1]["2"]; ?>>
+                                <p><?php echo $post_ims[2]["2"]; ?></p>    
                             </center>
                         </div>
                     </div>
                     
                    <div class="col-12 col-md-8">
                         <div class="single-post-text">
-                            <p>那么，特朗普先生接下来该如之何呢？<b>讽刺的是，他现在的处境真的和义和团运动时的慈禧老佛爷有些许相似</b>。面对于”奉旨造反“的群众，特朗普真是骑虎难下，<b>一方面，他乐见自己的支持者“如此勇猛”</b>，他希望继续利用“民气”为自己博取更大政治利益。<b>另一方面，他心里又极端恐惧，害怕对这些“川卫兵”们失去控制，搬起石头砸了自己的脚。</b>根据特朗普一贯的做风，可以预见，在局势变得不可收拾的时候，他自然会毫无负罪感地“改抚为剿”，一脚踢开这些狂热支持者。这也是<b>川普支持者最可悲的一点，他们选择支持一个没有人情味的利己主义者来实现自己的“美国梦”。</b></p>
+                            <p><?php echo $post_cons[1]["5"]; ?></p>
                         </div>
                     </div>
                    
                     <div class="col-12">
                         <div class="single-post-thumb">
                             <center>
-                                <img src="img/3_3.jpg" alt="">
-                                <p>（特朗普呼吁其支持者们撤离国会&nbsp&nbsp&nbsp图源：ABC News）</p>                                
+                                <img src=<?php echo $post_ims[0]["3"]; ?> alt=<?php echo $post_ims[1]["3"]; ?>>
+                                <p><?php echo $post_ims[2]["3"]; ?></p>
                             </center>
                         </div>
                     </div>
                     
                    <div class="col-12 col-md-8">
                         <div class="single-post-text">
-                            <p>特朗普的四年统治被国会山的可耻暴行画上了句号。但是<b>特朗普时代不会因为他的下台而终结。巨大的阴影已经投射到美国的方方面面</b>，“激化的党派之争”、“闹剧式的政治表演”、“短视的外交方针”、“急功近利的经济政策”……还有低下的政府执行力所导致的可怕疫情。现在，特朗普这个打开潘多拉魔盒的人已经无足轻重，现在关键的是谁能带领美国人民战胜这些凶相毕露的魔鬼。美国现在需要坚强的领导力，在这样紧急的情况下，即使打破一些常规，做出一些牺牲也是必要的。我们期待美国新一届政府的作为。</p>
+                            <p><?php echo $post_cons[1]["6"]; ?></p>
                         </div>
                     </div>
                     
