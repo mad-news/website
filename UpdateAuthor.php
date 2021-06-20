@@ -61,6 +61,8 @@
 		
 		echo "<h1 align=\"center\"> Insert New Author Record </h1>";
 		fFormCreateAuthor();
+
+		
 		
 		if(ISSET($_REQUEST["CreateAuthor"])){
 			fAddAuthors();
