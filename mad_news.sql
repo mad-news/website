@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2021 at 08:01 AM
+-- Generation Time: Jun 20, 2021 at 04:44 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -228,13 +228,11 @@ CREATE TABLE `ttypes` (
 INSERT INTO `ttypes` (`tyID`, `tyCHIName`, `tyENGName`, `tyCount`) VALUES
 (100, '政治', 'Politics', 1),
 (101, '财经', 'Business', 0),
-(102, '教育', 'Education', 0),
-(103, '社会', 'Society', 0),
-(104, '科技', 'Tech', 0),
-(105, '体育', 'Sport', 0),
-(106, '娱乐', 'Entertainment', 0),
-(107, '新闻评论', 'News', 0),
-(108, '疫情', 'Pandemic', 0);
+(102, '社会', 'Society', 0),
+(103, '科技', 'Tech', 0),
+(104, '文体', 'Recreation', 0),
+(105, '新闻评论', 'Commentary', 0),
+(106, '疫情', 'Pandemic', 0);
 
 --
 -- Indexes for dumped tables
