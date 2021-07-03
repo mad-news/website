@@ -378,7 +378,7 @@
 
     <section class="single-post-area">
         <!-- Single Post Title -->
-        <div class="single-post-title bg-img background-overlay" style="background-image: url(img/0.jpg);">
+        <div class="single-post-title bg-img background-overlay" style="background-image: url(../img/bg-img/politics_bg.jpg);">
             <div class="container h-100">
                 <div class="row h-100 align-items-end">
                     <div class="col-12">
