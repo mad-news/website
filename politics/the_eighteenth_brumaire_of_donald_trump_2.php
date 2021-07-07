@@ -25,7 +25,7 @@
 
 <body>
 
-<?php
+    <?php
 	session_start();
 	// --- Declare Variable ---------------------------------------------------------------------------------------
 	$serverName = "localhost";
@@ -168,7 +168,7 @@
 	fgetIms();
 	fgetTypes();
 ?>
-    
+
     <!-- Header Area Start -->
     <header class="header-area">
         <div class="top-header">
@@ -378,7 +378,7 @@
 
     <section class="single-post-area">
         <!-- Single Post Title -->
-        <div class="single-post-title bg-img background-overlay" style="background-image: url(img/0.jpg);">
+        <div class="single-post-title bg-img background-overlay" style="background-image: url(../img/bg-img/politics_bg.jpg);">
             <div class="container h-100">
                 <div class="row h-100 align-items-end">
                     <div class="col-12">
@@ -387,7 +387,7 @@
                             <div class="gazette-post-tag">
                                 <a href="#"><?php echo $post_typeENGName; ?></a>
                             </div>
-								<h2 class='font-pt'><?php echo $post_title; ?></h2>;
+                            <h2 class='font-pt'><?php echo $post_title; ?></h2>;
                             <p><?php echo $post_date; ?></p>
                             <p><?php echo "作者：" . $post_authorName; ?></p>
                         </div>
@@ -399,12 +399,12 @@
         <div class="single-post-contents">
             <div class="container">
                 <div class="row justify-content-center">
-                    
+
                     <div class="col-12 col-md-8">
                         <div class="single-post-text">
-                        </div>   
-                    </div>   
-                    
+                        </div>
+                    </div>
+
                     <div class="col-12">
                         <div class="single-post-thumb">
                             <center>
@@ -413,7 +413,7 @@
                             </center>
                         </div>
                     </div>
-                    
+
                     <div class="col-12 col-md-8">
                         <div class="single-post-text">
                             <p><?php echo $post_cons[0]["1"]; ?></p>
@@ -422,8 +422,8 @@
                             <p><?php echo $post_cons[1]["3"]; ?></p>
                         </div>
                     </div>
-                    
-                   <div class="col-12">
+
+                    <div class="col-12">
                         <div class="single-post-thumb">
                             <center>
                                 <img src=<?php echo $post_ims[0]["2"]; ?> alt=<?php echo $post_ims[1]["2"]; ?>>
@@ -431,14 +431,14 @@
                             </center>
                         </div>
                     </div>
-                    
+
                     <div class="col-12 col-md-8">
                         <div class="single-post-text">
                             <p><?php echo $post_cons[0]["4"]; ?></p>
                             <p><?php echo $post_cons[1]["4"]; ?></p>
                         </div>
                     </div>
-                    
+
                     <div class="col-12">
                         <div class="single-post-thumb">
                             <center>
@@ -446,12 +446,12 @@
                             </center>
                         </div>
                     </div>
-                    
+
                     <div class="col-12 col-md-8">
                         <div class="single-post-text">
-                        </div>   
-                    </div>   
-                    
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -644,10 +644,13 @@
                 <div class="row h-100 align-items-center justify-content-center">
                     <div class="col-12">
                         <div class="copywrite-text">
-                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</p>
+                            <p>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>
+                                    document.write(new Date().getFullYear());
+                                </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
                         </div>
                     </div>
                 </div>

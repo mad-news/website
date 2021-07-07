@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
- <title>Update Author</title>
- <meta name="description" content="Type a Short Description Here" />
- <meta name="keywords" content="type, keywords, here" />
- <meta name="author" content="Zhiwei Song" />
- <meta http-equiv="content-type" content="text/html;charset=UTF-8" /> 
- <link rel="stylesheet" type="text/css" href="mystyle.css" />
-</head>
-<body>
-<div style="position:absolute;z-index:-1;width:100%;height:100%;">
-    	<img src="wall.jpg" width="100%" height="100%" />
-</div>
 
-<?php
+<head>
+    <title>Update Author</title>
+    <meta name="description" content="Type a Short Description Here" />
+    <meta name="keywords" content="type, keywords, here" />
+    <meta name="author" content="Zhiwei Song" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="mystyle.css" />
+</head>
+
+<body>
+    <div style="position:absolute;z-index:-1;width:100%;height:100%;">
+        <img src="wall.jpg" width="100%" height="100%" />
+    </div>
+
+    <?php
 
 	session_start();
 
