@@ -1,21 +1,22 @@
-<!DOCTYPE HTML >
+<!DOCTYPE HTML>
 <html>
+
 <head>
- <title>Admin Login</title>
- <meta name="description" content="Type a Short Description Here" />
- <meta name="keywords" content="type, keywords, here" />
- <meta name="author" content="Zhiwei Song" />
- <meta http-equiv="content-type" content="text/html;charset=UTF-8" /> 
- <link rel="stylesheet" type="text/css" href="mystyle.css" />
+	<title>Admin Login</title>
+	<meta name="description" content="Type a Short Description Here" />
+	<meta name="keywords" content="type, keywords, here" />
+	<meta name="author" content="Zhiwei Song" />
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="mystyle.css" />
 </head>
 
 <body>
-<div style="position:absolute;z-index:-1;width:100%;height:100%;">
-    	<img src="mountain.jpg" width="100%" height="100%" />
-</div>
-<embed name="Shape of you" src="Ed Sheeran - Shape of You [Official Video].mp3" loop="True" hidden="true" autostart="true">
+	<div style="position:absolute;z-index:-1;width:100%;height:100%;">
+		<img src="mountain.jpg" width="100%" height="100%" />
+	</div>
+	<embed name="Shape of you" src="Ed Sheeran - Shape of You [Official Video].mp3" loop="True" hidden="true" autostart="true">
 
-<?php
+	<?php
 
 	session_start();
 
@@ -24,39 +25,44 @@
 	$DBName = "mad_news";
 	$userName = "root";
 	$userPassword = "";
-	
+
 	$UserName = "";
 	$Password = "";
 	$ClientID = 0;
-	$Step="";
+	$Step = "";
 
-	If(!ISSET($_SESSION["ClientID"])){$_SESSION["ClientID"] = 0;}
-	If(!ISSET($_SESSION["Admin"])){$_SESSION["Admin"] = 0;}
+	if (!isset($_SESSION["ClientID"])) {
+		$_SESSION["ClientID"] = 0;
+	}
+	if (!isset($_SESSION["Admin"])) {
+		$_SESSION["Admin"] = 0;
+	}
 
 	// ---- Get the values passed through the REQUEST
-	if (ISSET($_REQUEST["submit"])){
-		$UserName=$_REQUEST["UserName"];
-		$Password=$_REQUEST["Password"];
-		$Step=$_REQUEST["Step"];
+	if (isset($_REQUEST["submit"])) {
+		$UserName = $_REQUEST["UserName"];
+		$Password = $_REQUEST["Password"];
+		$Step = $_REQUEST["Step"];
 	}
 
 	// ---- Main Prog
-	Echo "<h1 style= 'color: yellow; text-align:center;'>Admin Login</h1>";
-	Echo "<br/><br/>";
+	echo "<h1 style= 'color: yellow; text-align:center;'>Admin Login</h1>";
+	echo "<br/><br/>";
 	fForm();
-	Echo "<br/><br/>";
-	Echo "<p style = 'text-align: center'>Please enter your username(Last name) and password(Phone Number).</p><br/>";
+	echo "<br/><br/>";
+	echo "<p style = 'text-align: center'>Please enter your username(Last name) and password(Phone Number).</p><br/>";
 
 
-	if($Step == "LI"){
+	if ($Step == "LI") {
 		fSearchUser();
 	}
 
 	// ---- Functions -----------------------------------------------------------
 
-	function fForm(){
+	function fForm()
+	{
 		echo "<div style=\" margin: auto; width: 172px;\">\n\n";
-		
+
 		echo "<form action='IndexAdmin.php' method='post'>\n";
 		echo "UserName<br/>\n";
 		echo "<input type='text' name='UserName' value=''>\n";
@@ -65,14 +71,14 @@
 		echo "<br/><br/><input type='submit' name='submit' value='Log In'><br/>\n";
 		echo "<input type='hidden' name='Step' value='LI'>\n";
 		echo "</form>\n\n";
-		
-		echo "</div>\n";
 
+		echo "</div>\n";
 	}
-	
+
 	//--------------------------------------------------------------------------------
 
-	function fSearchUser(){
+	function fSearchUser()
+	{
 		global $serverName, $userName, $userPassword, $DBName;
 		global $UserName, $Password;
 		// Connect to the database
@@ -80,28 +86,30 @@
 		if (!$conn) {
 			die("Connection failed: " . mysqli_connect_error());
 		}
-		
-		$myQuery="SELECT * From tauthors WHERE autLName = '$UserName' && autPhone = '$Password' ;";
+
+		$myQuery = "SELECT * From tauthors WHERE autLName = '$UserName' && autPhone = '$Password' ;";
 		$result = mysqli_query($conn, $myQuery);
-		
-		If (mysqli_num_rows($result) == 1){
+
+		if (mysqli_num_rows($result) == 1) {
 			$row = mysqli_fetch_array($result);
-			$_SESSION["ClientID"]=$row["autID"];	
-					
-			If (!$row["autID"] == '0'){
-				$_SESSION["Admin"]= 1;
-				header( "Location: UpdateAuthor.php" );
+			$_SESSION["ClientID"] = $row["autID"];
+
+			if (!$row["autID"] == '0') {
+				$_SESSION["Admin"] = 1;
+				header("Location: upload_articles.php");
 			}
-		
-		}else{
-			echo "<br/><br/><p style = 'text-align: center'>Either the user name or the password is wrong. If you don't have an account, please create one first. Plz Contact Zhiwei Song if you have more question.</p>";
+		} else {
+			echo "<p style = 'text-align: center; color: darkred; '><strong>Either the user name or 
+			the password is wrong. <br>If you don't have an account, please create one first. <br>Plz Contact 
+			Zhiwei Song if you have more question.</strong></p>";
 			//...report an error (nothing found)
 		}
 		mysqli_close($conn);
 	}
 
 	//-------------------------------------------------------------------------------------
-?>
+	?>
 
 </body>
+
 </html>
