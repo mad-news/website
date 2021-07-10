@@ -1116,8 +1116,9 @@ img {
 .comment-wrapper {
     background-color: #fff;
     padding: 20px;
+    padding-right: 40px;
     margin-bottom: 70px;
-    border-radius: 6px;
+    border-radius: 15px;
 }
 
 .comment-author {
@@ -1157,11 +1158,17 @@ img {
 }
 
 .comment_area ol li ol li .comment-wrapper {
-    margin-left: 100px;
+    margin-left: 80px;
+}
+
+.single_comment_area
+{
+     list-style-type:none;
 }
 
 .reply-btn {
     border: 1px solid #000;
+    border-radius: 5px;
     padding: 5px 15px;
     font-size: 12px;
     text-transform: uppercase;
@@ -1170,7 +1177,7 @@ img {
 .form-control {
     height: 50px;
     border: none;
-    border-radius: 0;
+    border-radius: 5px;
     padding: 15px 30px;
     font-size: 14px;
 }
@@ -1186,10 +1193,10 @@ textarea.form-control {
 .leave-comment-btn,
 .contact-btn {
     width: 100%;
-    font-size: 18px;
+    font-size: 15px;
     height: 50px;
     border: 2px solid #000;
-    border-radius: 0;
+    border-radius: 5px;
     background-color: transparent;
 }
 
