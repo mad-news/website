@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 20, 2021 at 04:44 PM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.6
+-- Generation Time: Jul 12, 2021 at 05:42 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -75,6 +75,19 @@ INSERT INTO `tauthors` (`autID`, `autFName`, `autLName`, `autPName`, `autPhone`,
 (108, 'Jianxu', 'Chen', 'cjxvictory', '6086288267', 'jchen855@wisc.edu', 1),
 (109, 'Mufan', 'Chen', '二杯面粉', '5853542760', 'mchen349@wisc.edu', 0),
 (110, 'Xiaoru', 'Ma', '不放香菜', '6089494894', 'maxiaoru_mandy@163.com', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tcomments`
+--
+
+CREATE TABLE `tcomments` (
+  `comID` int(11) NOT NULL,
+  `comText` text DEFAULT NULL,
+  `comuserID` int(11) NOT NULL,
+  `comDate` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -211,6 +224,21 @@ INSERT INTO `tpostims` (`posimID`, `posimArtID`, `posimImID`, `posimPriority`) V
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `treplies`
+--
+
+CREATE TABLE `treplies` (
+  `repID` int(11) NOT NULL,
+  `repText` text NOT NULL,
+  `repcomID` int(11) NOT NULL,
+  `repuserID` int(11) NOT NULL,
+  `repDate` date NOT NULL,
+  `repPriority` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `ttypes`
 --
 
@@ -226,13 +254,30 @@ CREATE TABLE `ttypes` (
 --
 
 INSERT INTO `ttypes` (`tyID`, `tyCHIName`, `tyENGName`, `tyCount`) VALUES
-(100, '政治', 'Politics', 1),
+(100, '政治', 'Politics', 3),
 (101, '财经', 'Business', 0),
 (102, '社会', 'Society', 0),
 (103, '科技', 'Tech', 0),
 (104, '文体', 'Recreation', 0),
 (105, '新闻评论', 'Commentary', 0),
 (106, '疫情', 'Pandemic', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tusers`
+--
+
+CREATE TABLE `tusers` (
+  `userID` int(11) NOT NULL,
+  `userLName` varchar(50) NOT NULL,
+  `userFName` varchar(50) NOT NULL,
+  `userPhone` varchar(50) NOT NULL,
+  `userGender` int(11) NOT NULL,
+  `userUserName` varchar(50) NOT NULL,
+  `userPassword` varchar(50) NOT NULL,
+  `userProfilePic` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -251,6 +296,13 @@ ALTER TABLE `tarticles`
 --
 ALTER TABLE `tauthors`
   ADD PRIMARY KEY (`autID`);
+
+--
+-- Indexes for table `tcomments`
+--
+ALTER TABLE `tcomments`
+  ADD PRIMARY KEY (`comID`),
+  ADD KEY `comuserID` (`comuserID`);
 
 --
 -- Indexes for table `tcontents`
@@ -281,10 +333,24 @@ ALTER TABLE `tpostims`
   ADD KEY `posimImID` (`posimImID`);
 
 --
+-- Indexes for table `treplies`
+--
+ALTER TABLE `treplies`
+  ADD PRIMARY KEY (`repID`),
+  ADD KEY `repcomID` (`repcomID`),
+  ADD KEY `repuserID` (`repuserID`);
+
+--
 -- Indexes for table `ttypes`
 --
 ALTER TABLE `ttypes`
   ADD PRIMARY KEY (`tyID`);
+
+--
+-- Indexes for table `tusers`
+--
+ALTER TABLE `tusers`
+  ADD PRIMARY KEY (`userID`);
 
 --
 -- Constraints for dumped tables
@@ -296,6 +362,12 @@ ALTER TABLE `ttypes`
 ALTER TABLE `tarticles`
   ADD CONSTRAINT `tarticles_ibfk_1` FOREIGN KEY (`artAutID`) REFERENCES `tauthors` (`autID`),
   ADD CONSTRAINT `tarticles_ibfk_2` FOREIGN KEY (`artTyID`) REFERENCES `ttypes` (`tyID`);
+
+--
+-- Constraints for table `tcomments`
+--
+ALTER TABLE `tcomments`
+  ADD CONSTRAINT `tcomments_ibfk_1` FOREIGN KEY (`comuserID`) REFERENCES `tusers` (`userID`);
 
 --
 -- Constraints for table `tpostcons`
@@ -310,6 +382,13 @@ ALTER TABLE `tpostcons`
 ALTER TABLE `tpostims`
   ADD CONSTRAINT `tpostims_ibfk_1` FOREIGN KEY (`posimArtID`) REFERENCES `tarticles` (`artID`),
   ADD CONSTRAINT `tpostims_ibfk_2` FOREIGN KEY (`posimImID`) REFERENCES `timages` (`imID`);
+
+--
+-- Constraints for table `treplies`
+--
+ALTER TABLE `treplies`
+  ADD CONSTRAINT `treplies_ibfk_1` FOREIGN KEY (`repcomID`) REFERENCES `tcomments` (`comID`),
+  ADD CONSTRAINT `treplies_ibfk_2` FOREIGN KEY (`repuserID`) REFERENCES `tusers` (`userID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
