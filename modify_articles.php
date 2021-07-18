@@ -11,7 +11,7 @@ session_start(); ?>
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Upload Articles</title>
+    <title>Modify Articles</title>
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -31,8 +31,7 @@ session_start(); ?>
             font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
         }
 
-        .uploadarticle {
-            text-align: center;
+        .modifyarticle {
             font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
         }
 
@@ -87,7 +86,7 @@ session_start(); ?>
             position: relative;
         }
 
-        #UploadParagraph {
+        #UploadArticle {
             width: 8rem;
             font-size: 12px;
             text-align: center;
@@ -99,11 +98,11 @@ session_start(); ?>
             right: 140px;
         }
 
-        #UploadParagraph:hover {
+        #UploadArticle:hover {
             background-color: orange;
         }
 
-        #UploadImage {
+        #DeleteArticle {
             width: 7rem;
             font-size: 12px;
             text-align: center;
@@ -115,23 +114,7 @@ session_start(); ?>
             right: 10px;
         }
 
-        #UploadImage:hover {
-            background-color: orange;
-        }
-
-        #ModifyArticle {
-            width: 7rem;
-            font-size: 12px;
-            text-align: center;
-            text-indent: 0px;
-            margin-top: 0;
-            margin-bottom: 0;
-            position: absolute;
-            top: 0;
-            right: 290px;
-        }
-
-        #ModifyArticle:hover {
+        #DeleteArticle:hover {
             background-color: orange;
         }
     </style>
@@ -146,11 +129,15 @@ session_start(); ?>
     $userName = "root";
     $userPassword = "";
 
-    $artID = "";
+    $changeTitle = "";
+    $changeField = "";
+
     $artTitle = "";
     $artAutID = "";
     $artDate = "";
     $artTyID = "";
+
+    $artTitleArray = array();
 
     $autPName = "";
     $tyName = "";
@@ -162,40 +149,64 @@ session_start(); ?>
     }
 
     // If upload button clicked, read the info and call relevant function
-    if (isset($_REQUEST["CreateArticle"])) {
-        fGetNextID();
-        $artTitle = $_REQUEST["artTitle"];
-        $autPName = $_REQUEST["artPName"];
-        $artDate = $_REQUEST["artDate"];
-        $tyName = $_REQUEST["artType"];
+    if (isset($_REQUEST["ModifyArticle"])) {
+        $changeTitle = $_REQUEST["articlechange"];
+        $changeField = $_REQUEST["fieldchange"];
+        if ($changeField == "artTitle") {
+            $artTitle = $_REQUEST["textchange"];
+        } else if ($changeField == "artPName") {
+            $autPName = $_REQUEST["textchange"];
+        } else if ($changeField == "artDate") {
+            $artDate = $_REQUEST["textchange"];
+        } else {
+            $tyName = $_REQUEST["artType"];
+        }
     }
 
     // ---- Main Prog
     if ($_SESSION["Admin"] != 0) {
+        fGetTitleArray();
 
-        if (isset($_REQUEST["CreateArticle"])) {
-            fGetAutID();
-            fGetTyID();
-            fAddArticles();
+        if (isset($_REQUEST["ModifyArticle"])) {
+            fModifyArticles();
         }
 
         if (isset($_REQUEST["Logout"])) {
             header("Location: IndexAdmin.php");
         }
 
-        if (isset($_REQUEST["UploadParagraph"])) {
-            header("Location: upload_paragraph.php");
+        if (isset($_REQUEST["UploadArticle"])) {
+            header("Location: upload_articles.php");
         }
 
-        if (isset($_REQUEST["UploadImage"])) {
-            header("Location: upload_image.php");
-        }
-
-        if (isset($_REQUEST["ModifyArticle"])) {
-            header("Location: modify_articles.php");
+        if (isset($_REQUEST["DeleteArticle"])) {
+            header("Location: delete_articles.php");
         }
     } else {
         header("Location: IndexAdmin.php");
+    }
+
+    function fGetTitleArray()
+    {
+        global $serverName, $userName, $userPassword, $DBName;
+        global $artTitleArray;
+
+        // Connect to the database
+        $conn = mysqli_connect($serverName, $userName, $userPassword, $DBName);
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+
+        $myQuery = "SELECT artTitle FROM tarticles";
+        $result = mysqli_query($conn, $myQuery);
+
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                array_push($artTitleArray, $row["artTitle"]);
+            }
+        }
+
+        mysqli_close($conn);
     }
 
     // Get AutID based on pen name
@@ -245,10 +256,10 @@ session_start(); ?>
         mysqli_close($conn);
     }
 
-    function fAddArticles()
+    function fModifyArticles()
     {
         global $serverName, $userName, $userPassword, $DBName;
-        global $artID, $artTitle, $artAutID, $artDate, $artTyID;
+        global $changeTitle, $changeField, $artTitle, $artAutID, $artDate, $artTyID;
 
         // Connect to the database
         $conn = mysqli_connect($serverName, $userName, $userPassword, $DBName);
@@ -256,39 +267,29 @@ session_start(); ?>
             die("Connection failed: " . mysqli_connect_error());
         }
 
-        $myQuery = "INSERT INTO tarticles (artID, artTitle, artAutID, artDate, artTyID) 
-				   VALUES ($artID, \"$artTitle\", $artAutID, \"$artDate\", $artTyID);";
+        if ($changeField == "artAutID") {
+            fGetAutID();
+        } else if ($changeField == "artTyID") {
+            fGetTyID();
+        }
+
+        $myQuery = "";
+        if ($changeField == "artAutID") {
+            $myQuery = "UPDATE tarticles SET artAutID = '" . $artAutID . "'WHERE artTitle = '" . $changeTitle . "'";
+        } else if ($changeField == "artTitle") {
+            $myQuery = "UPDATE tarticles SET artTitle = '" . $artTitle . "'WHERE artTitle = '" . $changeTitle . "'";
+        } else if ($changeField == "artDate") {
+            $myQuery = "UPDATE tarticles SET artDate = '" . $artDate . "'WHERE artTitle = '" . $changeTitle . "'";
+        } else {
+            $myQuery = "UPDATE tarticles SET artTyID = '" . $artTyID . "'WHERE artTitle = '" . $changeTitle . "'";
+        }
 
         $result = mysqli_query($conn, $myQuery);
         //If there is a result...
         if ($result) {
-            echo '<script>alert("This article was added' . $artID . ',' . $artTitle . ','
-                . $artAutID . "," . $artDate . "," . $artTyID . '")</script>';
+            echo '<script>alert("This article was modified successfully!")</script>';
         } else {
-            echo "Insert failed! " . mysqli_error($conn);
-        }
-
-        mysqli_close($conn);
-    }
-
-    // Retreive the next article ID
-    function fGetNextID()
-    {
-        global $serverName, $userName, $userPassword, $DBName;
-        global $artID;
-
-        // Connect to the database
-        $conn = mysqli_connect($serverName, $userName, $userPassword, $DBName);
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
-
-        $myQuery = "SELECT MAX(artID) FROM tarticles;";
-        $result = mysqli_query($conn, $myQuery);
-
-        if (mysqli_num_rows($result) == 1) {
-            $row = mysqli_fetch_array($result);
-            $artID = $row[0] + 1;
+            echo "Update failed! " . mysqli_error($conn);
         }
 
         mysqli_close($conn);
@@ -297,26 +298,37 @@ session_start(); ?>
     ?>
 
     <header>
-        <form action='upload_articles.php' method='post'>
+        <form action='modify_articles.php' method='post'>
             <input type='submit' id="Logout" name='Logout' value='Logout'>
         </form>
-        <form action='upload_articles.php' method='post'>
-            <input type='submit' id="UploadParagraph" name='UploadParagraph' value='Upload Paragraph'>
+        <form action='modify_articles.php' method='post'>
+            <input type='submit' id="UploadArticle" name='UploadArticle' value='Upload Article'>
         </form>
-        <form action='upload_articles.php' method='post'>
-            <input type='submit' id="UploadImage" name='UploadImage' value='Upload Image'>
+        <form action='modify_articles.php' method='post'>
+            <input type='submit' id="DeleteArticle" name='DeleteArticle' value='Delete Article'>
         </form>
-        <form action='upload_articles.php' method='post'>
-            <input type='submit' id="ModifyArticle" name='ModifyArticle' value='Modify Article'>
-        </form>
-        <h1 style="text-align: center; margin-top: 20px;">Upload Articles</h1>
+        <h1 style="text-align: center; margin-top: 20px;">Modify Articles</h1>
     </header>
 
-    <div class="col-md-3 uploadarticle" style="margin: auto; width: 300px">
-        <form action='upload_articles.php' method='post'>
-            <input type='text' id="artTitle" name='artTitle' value='' placeholder="Article Title">
-            <input type='text' id="artPName" name='artPName' value='' placeholder="Author Pen Name">
-            <input type='text' id="artDate" name='artDate' value='' placeholder="Date">
+    <div class="col-md-3 modifyarticle" style="margin: auto; width: 300px">
+        <form action='modify_articles.php' method='post'>
+            Article Title<br />
+            <select id="articlechange" name="articlechange">
+                <?php
+                for ($i = 0; $i < count($artTitleArray); $i++) {
+                    echo "<option>" . $artTitleArray[$i] . "</option>";
+                }
+                ?>
+            </select>
+
+            <div></div><br>Field Change<br />
+            <select id="fieldchange" name="fieldchange">
+                <option value="artTitle" selected>artTitle</option>
+                <option value="artPName">artPName</option>
+                <option value="artDate">artDate</option>
+                <option value="artType">artType</option>
+            </select>
+            <input type='text' id="textchange" name='textchange' value='' placeholder="Change">
             <br />Article Type<br />
             <select id="artType" name="artType">
                 <option value="Politics" selected>Politics</option>
@@ -327,7 +339,7 @@ session_start(); ?>
                 <option value="Commentary">Commentary</option>
                 <option value="Pandemic">Pandemic</option>
             </select>
-            <br /><br><input type='submit' id="CreateArticle" name='CreateArticle' value='CreateArticle'>
+            <br /><br><input type='submit' id="ModifyArticle" name='ModifyArticle' value='ModifyArticle'>
             <input id="reset" type='reset'>
         </form>
     </div>
