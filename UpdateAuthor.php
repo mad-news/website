@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Update Author</title>
-    <meta name="description" content="Type a Short Description Here" />
-    <meta name="keywords" content="type, keywords, here" />
-    <meta name="author" content="Zhiwei Song" />
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="mystyle.css" />
+ <title>Update Author</title>
+ <meta name="description" content="Type a Short Description Here" />
+ <meta name="keywords" content="type, keywords, here" />
+ <meta name="author" content="Zhiwei Song" />
+ <meta http-equiv="content-type" content="text/html;charset=UTF-8" /> 
+ <link rel="stylesheet" type="text/css" href="mystyle.css" />
 </head>
-
 <body>
-    <div style="position:absolute;z-index:-1;width:100%;height:100%;">
-        <img src="wall.jpg" width="100%" height="100%" />
-    </div>
+<div style="position:absolute;z-index:-1;width:100%;height:100%;">
+    	<img src="wall.jpg" width="100%" height="100%" />
+</div>
 
-    <?php
+<?php
 
 	session_start();
 
@@ -46,10 +44,11 @@
 		$autGender=$_REQUEST["autGender"];
 	}
 
-	if (ISSET($_REQUEST["Update"])){
-		$RoomID1=$_REQUEST["rooID"];
-		$rooColumn=$_REQUEST["Data"];
-		$rooInformation=$_REQUEST["Text"];
+	if (ISSET($_REQUEST["UpdateAuthor"])){
+		$autID=$_REQUEST["autID"];
+		$autPhone=$_REQUEST["autPhone"];
+		$autEmail = $_REQUEST["autEmail"];
+		$autPName = $_REQUEST["autPName"];
 	}
 
 	if (ISSET($_REQUEST["Delete"])){
@@ -59,15 +58,21 @@
 	// ---- Main Prog
 	If($_SESSION["Admin"] != 0){
 		fLogout();
-		fGetNextID();
 		
 		echo "<h1 align=\"center\"> Insert New Author Record </h1>";
 		fFormCreateAuthor();
 
+		echo "<h1 align=\"center\"> Update Author Info </h1>";
+        fFormUpdateAuthor();
 		
 		
 		if(ISSET($_REQUEST["CreateAuthor"])){
+			fGetNextID();
 			fAddAuthors();
+		}
+
+		if(ISSET($_REQUEST["UpdateAuthor"])){
+			fUpdateAuthors();
 		}
 		
 		if(ISSET($_REQUEST["Logout"])){
@@ -97,6 +102,24 @@
 		echo "<br/>autGender (1 = M, 0 = F)<br/>";
 		echo "<input type='text' name='autGender' value=''>\n";
 		echo "<br/><br><input type='submit' name='CreateAuthor' value='CreateAuthor'>\n";
+		echo "<input type='reset'>";
+		echo "</form>\n";
+		echo "</div>\n\n";
+	}
+
+	// ---- Functions -----------------------------------------------------------
+	function fFormUpdateAuthor(){
+		echo "<div style=\" margin: auto; width: 172px;\">\n";
+		echo "<form action='UpdateAuthor.php' method='post'>\n";
+		echo "<br/>autID<br/>";
+		echo "<input type='text' name='autID' value=''>\n";
+		echo "<br/>autPhone<br/>";
+		echo "<input type='text' name='autPhone' value=''>\n";
+		echo "<br/>autEmail<br/>";
+		echo "<input type='text' name='autEmail' value=''>\n";
+		echo "<br/>autPName<br/>";
+		echo "<input type='text' name='autPName' value=''>\n";
+		echo "<br/><br><input type='submit' name='UpdateAuthor' value='UpdateAuthor'>\n";
 		echo "<input type='reset'>";
 		echo "</form>\n";
 		echo "</div>\n\n";
@@ -150,6 +173,31 @@
 		
 		}
 		
+		mysqli_close($conn);
+		
+	}
+
+	//--------------------------------------------------------------------------
+	
+	function fUpdateAuthors(){
+		global $serverName, $userName, $userPassword, $DBName;
+		global $autID, $autPhone, $autEmail, $autPName;
+		
+		// Connect to the database
+		$conn = mysqli_connect($serverName, $userName, $userPassword, $DBName);
+		if (!$conn) {
+			die("Connection failed: " . mysqli_connect_error());
+		}
+		$myQuery= "UPDATE tauthors
+				   SET autEmail = \"$autEmail\", autPhone = \"$autPhone\", autPName = \"$autPName\"
+				   WHERE autID = $autID;";
+		$result = mysqli_query($conn, $myQuery);
+		if ($result){
+			echo "This author info was updated $autPhone, $autEmail, $autPName";
+		} else {
+			echo "Update failed! " .mysqli_error($conn);
+		
+		}		
 		mysqli_close($conn);
 		
 	}
