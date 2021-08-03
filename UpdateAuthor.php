@@ -51,8 +51,8 @@
 		$autPName = $_REQUEST["autPName"];
 	}
 
-	if (ISSET($_REQUEST["Delete"])){
-		$RoomID1=$_REQUEST["rooID"];
+	if (ISSET($_REQUEST["DeleteAuthor"])){
+		$autID=$_REQUEST["autID"];
 	}
 	
 	// ---- Main Prog
@@ -65,6 +65,8 @@
 		echo "<h1 align=\"center\"> Update Author Info </h1>";
         fFormUpdateAuthor();
 		
+		echo "<h1 align=\"center\"> Delete Author </h1>";
+        fFormDeleteAuthor();
 		
 		if(ISSET($_REQUEST["CreateAuthor"])){
 			fGetNextID();
@@ -73,6 +75,10 @@
 
 		if(ISSET($_REQUEST["UpdateAuthor"])){
 			fUpdateAuthors();
+		}
+
+		if(ISSET($_REQUEST["DeleteAuthor"])){
+			fDeleteAuthors();
 		}
 		
 		if(ISSET($_REQUEST["Logout"])){
@@ -120,6 +126,17 @@
 		echo "<br/>autPName<br/>";
 		echo "<input type='text' name='autPName' value=''>\n";
 		echo "<br/><br><input type='submit' name='UpdateAuthor' value='UpdateAuthor'>\n";
+		echo "<input type='reset'>";
+		echo "</form>\n";
+		echo "</div>\n\n";
+	}
+
+	function fFormDeleteAuthor(){
+		echo "<div style=\" margin: auto; width: 172px;\">\n";
+		echo "<form action='UpdateAuthor.php' method='post'>\n";
+		echo "<br/>autID<br/>";
+		echo "<input type='text' name='autID' value=''>\n";
+		echo "<br/><br><input type='submit' name='DeleteAuthor' value='DeleteAuthor'>\n";
 		echo "<input type='reset'>";
 		echo "</form>\n";
 		echo "</div>\n\n";
@@ -194,6 +211,28 @@
 		$result = mysqli_query($conn, $myQuery);
 		if ($result){
 			echo "This author info was updated $autPhone, $autEmail, $autPName";
+		} else {
+			echo "Update failed! " .mysqli_error($conn);
+		
+		}		
+		mysqli_close($conn);
+		
+	}
+
+	function fDeleteAuthors(){
+		global $serverName, $userName, $userPassword, $DBName;
+		global $autID;
+		
+		// Connect to the database
+		$conn = mysqli_connect($serverName, $userName, $userPassword, $DBName);
+		if (!$conn) {
+			die("Connection failed: " . mysqli_connect_error());
+		}
+		$myQuery= "DELETE FROM tauthors 
+				   WHERE autID = $autID;";
+		$result = mysqli_query($conn, $myQuery);
+		if ($result){
+			echo "This author info was deleted $autID";
 		} else {
 			echo "Update failed! " .mysqli_error($conn);
 		
