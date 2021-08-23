@@ -508,6 +508,7 @@
             </div>
         </div>
     </section>
+    
     <!-- Footer Area Start -->
     <footer class="footer-area bg-img background-overlay" style="background-image: url(../img/bg-img/footer_bg.jpg);">
         <!-- Top Footer Area -->
