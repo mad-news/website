@@ -1,597 +1,537 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <!-- Title  -->
-    <title>麦迪讯【社会类】文章 | Madnews: Society</title>
+        <!-- Title  -->
+        <title>麦迪讯 | 新闻评论 Commentary</title>
 
-    <!-- Favicon  -->
-    <link rel="icon" href="../img/core-img/logo.jpg">
+        <!-- Favicon  -->
+        <link rel="icon" href="../img/core-img/logo.jpg">
 
-    <!-- Core Style CSS -->
-    <link rel="stylesheet" href="../css/core-style.css">
-    <link rel="stylesheet" href="../style.css">
+        <!-- Core Style CSS -->
+        <link rel="stylesheet" href="../css/core-style.css">
+        <link rel="stylesheet" href="../style.css">
 
-    <!-- Responsive CSS -->
-    <link href="../css/responsive.css" rel="stylesheet">
+        <!-- Responsive CSS -->
+        <link href="../css/responsive.css" rel="stylesheet">
 
-</head>
+    </head>
 
-<body>
-<!-- Header Area Start -->
-<header class="header-area">
-    <div class="top-header">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <!-- Breaking News Area -->
-                <div class="col-12 col-md-6">
-                    <div class="breaking-news-area">
-                        <h5 class="breaking-news-title">近日要闻</h5>
-                        <div id="breakingNewsTicker" class="ticker">
-                            <ul>
-                                <li><a href="#">[2021/6/20]中国累计报告接种新冠疫苗超10亿剂次</a></li>
-                                <li><a href="#">[2021/6/19]中国塔里木盆地新发现10亿吨超深油气区</a></li>
-                                <li><a href="#">[2021/6/18]美俄日内瓦峰会结束</a></li>
-                                <li><a href="#">[2021/6/16]中国神州12号飞船将在6月17日发射升空</a></li>
-                                <li><a href="#">[2021/6/15]和贝佐斯飞往太空的票价：2800万美元</a></li>
-                                <li><a href="#">[2021/6/13]欧盟峰会：中国，气候，发展中国家</a></li>
-                            </ul>
+    <body>
+        <!-- Header Area Start -->
+        <header class="header-area">
+            <div class="top-header">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- Breaking News Area -->
+                        <div class="col-12 col-md-6">
+                            <div class="breaking-news-area">
+                                <h5 class="breaking-news-title">近日要闻</h5>
+                                <div id="breakingNewsTicker" class="ticker">
+                                    <ul>
+                                        <li><a href="#">[2021/6/20]中国累计报告接种新冠疫苗超10亿剂次</a></li>
+                                        <li><a href="#">[2021/6/19]中国塔里木盆地新发现10亿吨超深油气区</a></li>
+                                        <li><a href="#">[2021/6/18]美俄日内瓦峰会结束</a></li>
+                                        <li><a href="#">[2021/6/16]中国神州12号飞船将在6月17日发射升空</a></li>
+                                        <li><a href="#">[2021/6/15]和贝佐斯飞往太空的票价：2800万美元</a></li>
+                                        <li><a href="#">[2021/6/13]欧盟峰会：中国，气候，发展中国家</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <!-- Stock News Area -->
-                <div class="col-12 col-md-6">
-                    <div class="stock-news-area">
-                        <div id="stockNewsTicker" class="ticker">
-                            <ul>
-                                <li>
-                                    <div class="single-stock-report">
-                                        <div class="stock-values">
-                                            <span>麦迪逊最高气温</span>
-                                            <span>6.23</span>
-                                        </div>
-                                        <div class="stock-index minus-index">
-                                            <h4>26℃</h4>
-                                        </div>
-                                    </div>
-                                    <div class="single-stock-report">
-                                        <div class="stock-values">
-                                            <span>麦迪逊最低气温</span>
-                                            <span>6.23</span>
-                                        </div>
-                                        <div class="stock-index plus-index">
-                                            <h4>14℃</h4>
-                                        </div>
-                                    </div>
-                                    <div class="single-stock-report">
-                                        <div class="stock-values">
-                                            <span>麦迪逊天气</span>
-                                            <span>6.23</span>
-                                        </div>
-                                        <div class="text">
-                                            <h4 style="color:white">暴雨</h4>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="single-stock-report">
-                                        <div class="stock-values">
-                                            <span>麦迪逊最高气温</span>
-                                            <span>6.24</span>
-                                        </div>
-                                        <div class="stock-index minus-index">
-                                            <h4>25℃</h4>
-                                        </div>
-                                    </div>
-                                    <div class="single-stock-report">
-                                        <div class="stock-values">
-                                            <span>麦迪逊最低气温</span>
-                                            <span>6.24</span>
-                                        </div>
-                                        <div class="stock-index plus-index">
-                                            <h4>18℃</h4>
-                                        </div>
-                                    </div>
-                                    <div class="single-stock-report">
-                                        <div class="stock-values">
-                                            <span>麦迪逊天气</span>
-                                            <span>6.24</span>
-                                        </div>
-                                        <div class="text">
-                                            <h4 style="color:white">暴雨</h4>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="single-stock-report">
-                                        <div class="stock-values">
-                                            <span>麦迪逊最高气温</span>
-                                            <span>6.25</span>
-                                        </div>
-                                        <div class="stock-index minus-index">
-                                            <h4>26℃</h4>
-                                        </div>
-                                    </div>
-                                    <div class="single-stock-report">
-                                        <div class="stock-values">
-                                            <span>麦迪逊最低气温</span>
-                                            <span>6.25</span>
-                                        </div>
-                                        <div class="stock-index plus-index">
-                                            <h4>19℃</h4>
-                                        </div>
-                                    </div>
-                                    <div class="single-stock-report">
-                                        <div class="stock-values">
-                                            <span>麦迪逊天气</span>
-                                            <span>6.25</span>
-                                        </div>
-                                        <div class="text">
-                                            <h4 style="color:white">雷阵雨</h4>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                        <!-- Stock News Area -->
+                        <div class="col-12 col-md-6">
+                            <div class="stock-news-area">
+                                <div id="stockNewsTicker" class="ticker">
+                                    <ul>
+                                        <li>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>麦迪逊最高气温</span>
+                                                    <span>6.23</span>
+                                                </div>
+                                                <div class="stock-index minus-index">
+                                                    <h4>26℃</h4>
+                                                </div>
+                                            </div>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>麦迪逊最低气温</span>
+                                                    <span>6.23</span>
+                                                </div>
+                                                <div class="stock-index plus-index">
+                                                    <h4>14℃</h4>
+                                                </div>
+                                            </div>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>麦迪逊天气</span>
+                                                    <span>6.23</span>
+                                                </div>
+                                                <div class="text">
+                                                    <h4 style="color:white">暴雨</h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>麦迪逊最高气温</span>
+                                                    <span>6.24</span>
+                                                </div>
+                                                <div class="stock-index minus-index">
+                                                    <h4>25℃</h4>
+                                                </div>
+                                            </div>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>麦迪逊最低气温</span>
+                                                    <span>6.24</span>
+                                                </div>
+                                                <div class="stock-index plus-index">
+                                                    <h4>18℃</h4>
+                                                </div>
+                                            </div>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>麦迪逊天气</span>
+                                                    <span>6.24</span>
+                                                </div>
+                                                <div class="text">
+                                                    <h4 style="color:white">暴雨</h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>麦迪逊最高气温</span>
+                                                    <span>6.25</span>
+                                                </div>
+                                                <div class="stock-index minus-index">
+                                                    <h4>26℃</h4>
+                                                </div>
+                                            </div>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>麦迪逊最低气温</span>
+                                                    <span>6.25</span>
+                                                </div>
+                                                <div class="stock-index plus-index">
+                                                    <h4>19℃</h4>
+                                                </div>
+                                            </div>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>麦迪逊天气</span>
+                                                    <span>6.25</span>
+                                                </div>
+                                                <div class="text">
+                                                    <h4 style="color:white">雷阵雨</h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Middle Header Area -->
-    <div class="middle-header">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <!-- Logo Area -->
-                <div class="col-12 col-md-4">
-                    <div class="logo-area">
-                        <a href="../index.html"><img src="../img/core-img/logo_madnews.png" alt="logo"></a>
-                    </div>
-                </div>
-                <!-- Header Advert Area -->
-                <div class="col-12 col-md-8">
-                    <div class="header-advert-area">
-                        <img src="../img/bg-img/madnews_bg.jpg" alt="header-add">
+            <!-- Middle Header Area -->
+            <div class="middle-header">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- Logo Area -->
+                        <div class="col-12 col-md-4">
+                            <div class="logo-area">
+                                <a href="../index.html"><img src="../img/core-img/logo_madnews.png" alt="logo"></a>
+                            </div>
+                        </div>
+                        <!-- Header Advert Area -->
+                        <div class="col-12 col-md-8">
+                            <div class="header-advert-area">
+                                <img src="../img/bg-img/madnews_bg.png" alt="header-add">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Bottom Header Area -->
-    <div class="bottom-header">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="main-menu">
-                        <nav class="navbar navbar-expand-lg">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#gazetteMenu" aria-controls="gazetteMenu" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
-                            <div class="collapse navbar-collapse" id="gazetteMenu">
-                                <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">目录 Pages</a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="../../index.html">首页 Home</a>
-                                            <a class="dropdown-item" href="../../category.html">分类 Category</a>
-                                            <a class="dropdown-item" href="../../about-us.html">介绍 About</a>
-                                            <a class="dropdown-item" href="../../contact.html">平台 Platform</a>
+
+            <!-- Bottom Header Area -->
+            <div class="bottom-header">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <div class="main-menu">
+                                <nav class="navbar navbar-expand-lg">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                        data-target="#gazetteMenu" aria-controls="gazetteMenu" aria-expanded="false"
+                                        aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
+                                    <div class="collapse navbar-collapse" id="gazetteMenu">
+                                        <ul class="navbar-nav mr-auto">
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                                    role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">目录 Pages</a>
+                                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                    <a class="dropdown-item" href="../index.html">首页 Home</a>
+                                                    <a class="dropdown-item" href="../category.html">分类 Category</a>
+                                                    <a class="dropdown-item" href="../about.html">介绍 About</a>
+                                                    <a class="dropdown-item" href="../platform.html">平台 Platform</a>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class='nav-link' href='../politics/category.html'>政治 Politics</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="../business/category.html">财经 Business</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="../society/category.html">社会 Society</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="../tech/category.html">科技 Tech</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="../recreation/category.html">文体 Recreation</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="../commentary/category.html">新闻评论
+                                                    Commentary</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="../pandemic/pandemic.html">疫情 Pandemic</a>
+                                            </li>
+                                        </ul>
+                                        <!-- Search Form -->
+                                        <div class="header-search-form mr-auto">
+                                            <form action="#">
+                                                <input type="search"
+                                                    placeholder="Input your keyword then press enter..." id="search"
+                                                    name="search">
+                                                <input class="d-none" type="submit" value="submit">
+                                            </form>
                                         </div>
+                                        <!-- Search btn -->
+                                        <div id="searchbtn">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header Area End -->
+
+        <section class="single-post-area">
+            <!-- Single Post Title -->
+            <div class="single-post-title bg-img background-overlay"
+                style="background-image: url(../img/bg-img/commentary_bg.png);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-end">
+                        <div class="col-12">
+                            <div class="single-post-title-content">
+                                <!-- Post Tag -->
+                                <div class="gazette-post-tag">
+                                    <a href="">MADNEWS</a>
+                                </div>
+                                <h2 class="font-pt">麦迪讯 | 新闻评论<br></br></h2>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catagory-welcome-post-area">
+                <div class="container">
+                    <div class="row justify-content-center section_padding_100 ">
+
+                        <div class="col-12 col-md-4">
+                            <!-- Gazette Welcome Post -->
+                            <div class="gazette-welcome-post">
+                                <!-- Post Tag -->
+                                <div class="gazette-post-tag">
+                                    <a href="#">Commentary</a>
+                                </div>
+                                <h4 class="font-pt">【观点】就算是“土猪”，也可以仰望星空</h4>
+                                <p class="gazette-post-date">2021年6月9日</p>
+                                <!-- Post Thumbnail -->
+                                <div class="blog-post-thumbnail my-5">
+                                    <img src="img/41_Zhang_Xi_Feng_In_Grade_12.jpg"
+                                        style="max-height: 250px; width: auto;" alt="【观点】就算是“土猪”，也可以仰望星空">
+                                </div>
+                                <!-- Post Excerpt -->
+                                <p>前两天，我收到麦迪讯社长小袁的约稿邀请， 他问我作为一名女性如何看待最近来自衡水中学张锡峰同学在网络上颇有争议的一段演讲——
+                                    “我就是一只来自乡下的土猪，也要立志去拱了城市里的白菜。“出于好奇，我点开了张同学的演讲视频...
+                                </p>
+                                <!-- Reading More -->
+                                <div class="post-continue-reading-share mt-30">
+                                    <div class="post-continue-btn">
+                                        <a href="stars-will-shine-above-the-valley-floor.html" class="font-pt"
+                                            target="_blank" title="在新标签页打开专栏">欢迎阅读 <i class="fa fa-chevron-right"
+                                                aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                            <!-- Gazette Welcome Post -->
+                            <div class="gazette-welcome-post">
+                                <!-- Post Tag -->
+                                <div class="gazette-post-tag">
+                                    <a href="#">Commentary</a>
+                                </div>
+                                <h4 class="font-pt">【社论】年轻人选择“躺平”有罪否？</h4>
+                                <p class="gazette-post-date">2021年5月31日</p>
+                                <!-- Post Thumbnail -->
+                                <div class="blog-post-thumbnail my-5">
+                                    <img src="img/LyingFlat_Stakhanov.png" style="max-height: 250px; width: auto;"
+                                        alt="【社论】年轻人选择“躺平”有罪否？">
+                                </div>
+                                <!-- Post Excerpt -->
+                                <p>最近，一则叫《躺平即是正义》的帖子在网上风靡， 文章记载了一个年轻人选择无工作的自由生活的故事。他说自己每月的花销控制在200块以内，
+                                    每天就是解决食物的问题。原来大家只是觉得这个人的生活很有趣。 但慢慢的，“躺平”却引发了许多人的共鸣，悄然地演变成一种生活的态度。
+                                    <!-- Reading More -->
+                                <div class="post-continue-reading-share mt-30">
+                                    <div class="post-continue-btn">
+                                        <a href="lying-flat.html" class="font-pt" target="_blank" title="在新标签页打开专栏">欢迎阅读
+                                            <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                            <!-- Gazette Welcome Post -->
+                            <div class="gazette-welcome-post">
+                                <!-- Post Tag -->
+                                <div class="gazette-post-tag">
+                                    <a href="#">Commentary</a>
+                                </div>
+                                <h4 class="font-pt">【社论】从“土猪拱白菜”看什么是阶级</h4>
+                                <p class="gazette-post-date">2021年7月5日</p>
+                                <!-- Post Thumbnail -->
+                                <div class="blog-post-thumbnail my-5">
+                                    <img src="img/45_Zhang_Xi_Feng.png" style="max-height: 250px; width: auto;"
+                                        alt="【社论】从“土猪拱白菜”看什么是阶级">
+                                </div>
+                                <!-- Post Excerpt -->
+                                <p>衡水中学张锡峰同学自“土猪拱白菜”引发的争议正在继续发酵。高考结束后，父母开汽车来接他同样引发了激烈的讨论。
+                                    有网友认为，张锡峰同学的家庭并不拮据，也和很多家庭一样有房有车，这与张锡峰同学自己在演讲中所描述说的： 看着其他同学被轿车接走而心中“翻江倒海”的场景是有出入的。
+                                </p>
+                                <!-- Reading More -->
+                                <div class="post-continue-reading-share mt-30">
+                                    <div class="post-continue-btn">
+                                        <a href="see-through-pigs-digging-cabbages.html" class="font-pt" target="_blank"
+                                            title="在新标签页打开专栏">欢迎阅读 <i class="fa fa-chevron-right"
+                                                aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                            <!-- Gazette Welcome Post -->
+                            <div class="gazette-welcome-post">
+                                <!-- Post Tag -->
+                                <div class="gazette-post-tag">
+                                    <a href="#">Commentary</a>
+                                </div>
+                                <h4 class="font-pt">社论：记一次有必要的失误——由成都四十九中事件所想到的</h4>
+                                <p class="gazette-post-date">2021年5月17日</p>
+                                <!-- Post Thumbnail -->
+                                <div class="blog-post-thumbnail my-5">
+                                    <img src="img/NO%2049_Scene.png" style="max-height: 250px; width: auto;"
+                                        alt="社论：记一次有必要的失误——由成都四十九中事件所想到的">
+                                </div>
+                                <!-- Post Excerpt -->
+                                <p>所以，在49中事件以后，我更加坚定地认为： 关心同胞的尊严并没有错，关心社会正义更不是“境外势力”的代名词。
+                                    因为，“境外势力”绝对不可能比中国人自己还关心中国人的前途命运。 青年人的正义呼声不是递给外人的杀人匕首，而是割除自身社会弊病的手术刀。
+                                </p>
+                                <!-- Reading More -->
+                                <div class="post-continue-reading-share mt-30">
+                                    <div class="post-continue-btn">
+                                        <a href="about-chengdu-no49-middle-school.html" class="font-pt" target="_blank"
+                                            title="在新标签页打开专栏">欢迎阅读 <i class="fa fa-chevron-right"
+                                                aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                            <!-- Gazette Welcome Post -->
+                            <div class="gazette-welcome-post">
+                                <!-- Post Tag -->
+                                <div class="gazette-post-tag">
+                                    <a href="#">Commentary</a>
+                                </div>
+                                <h4 class="font-pt">创造历史，赵婷携《无依之地》获得小金人！！</h4>
+                                <p class="gazette-post-date">2021年4月25日</p>
+                                <!-- Post Thumbnail -->
+                                <div class="blog-post-thumbnail my-5">
+                                    <img src="img/Nomadland_Newspapers.jpg" style="max-height: 250px; width: auto;"
+                                        alt="创造历史，赵婷携《无依之地》获得小金人！！">
+                                </div>
+                                <!-- Post Excerpt -->
+                                <p>周日，赵婷首位获得奥斯卡最佳导演奖的有色人种女性，她也是首位获得该奖的华人女性，
+                                    同时也是史上第二位摘得该奖项的女性导演。她执导的《无依之地》（Nomadland）斩获最佳电影奖， 女主角弗朗西丝·麦克多曼德(Frances
+                                    McDormand)获最佳女主角。</p>
+                                <!-- Reading More -->
+                                <div class="post-continue-reading-share mt-30">
+                                    <div class="post-continue-btn">
+                                        <a href="nomadland.html" class="font-pt" target="_blank" title="在新标签页打开专栏">欢迎阅读
+                                            <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                            <!-- Gazette Welcome Post -->
+                            <div class="gazette-welcome-post">
+                                <!-- Post Tag -->
+                                <div class="gazette-post-tag">
+                                    <a href="#">Commentary</a>
+                                </div>
+                                <h4 class="font-pt">是天灾，更是人祸——甘肃越野马拉松的惨痛教训</h4>
+                                <p class="gazette-post-date">2021年5月24日</p>
+                                <!-- Post Thumbnail -->
+                                <div class="blog-post-thumbnail my-5">
+                                    <img src="img/Gansu_Cross-Country_Marathon_Scene.png"
+                                        style="max-height: 250px; width: auto;" alt="是天灾，更是人祸——甘肃越野马拉松的惨痛教训">
+                                </div>
+                                <!-- Post Excerpt -->
+                                <p>这次甘肃马拉松事故是一起非常严重公共安全事件，根据现场传回的视频和照片来看，
+                                    遇难运动员们的穿着十分单薄，突如起来的强对流天气立刻造成了他们的体温快速下降，导致发生了休克和肌肉痉挛，有些人当场就不行了，有的人则是在试图寻找掩蔽处休息。
+                                </p>
+                                <!-- Reading More -->
+                                <div class="post-continue-reading-share mt-30">
+                                    <div class="post-continue-btn">
+                                        <a href="gansu-cross-country-marathon.html" class="font-pt" target="_blank"
+                                            title="在新标签页打开专栏">欢迎阅读 <i class="fa fa-chevron-right"
+                                                aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Area Start -->
+        <footer class="footer-area bg-img background-overlay"
+            style="background-image: url(../img/bg-img/footer_bg.jpg);">
+            <!-- Top Footer Area -->
+            <div class="top-footer-area section_padding_100_70">
+                <div class="container">
+                    <div class="row">
+                        <!-- Single Footer Widget -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-footer-widget">
+                                <div class="footer-widget-title">
+                                    <h4 class="font-pt">国内平台</h4>
+                                </div>
+                                <ul class="footer-widget-menu">
+                                    <li><a
+                                            href="https://weixin.sogou.com/weixin?type=1&s_from=input&query=madison_news">微信公众号</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="../politics/the_eighteenth_brumaire_of_donald_trump_1.html">政治 Politics</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="../business/single-post.html">财经 Business</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">社会 Society</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="../../tech/Covid_Vaccine_Comparison.html">科技 Tech</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="../../sport/Chinese_Women_Football.html">文体 Recreation</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="../../news/single-post.html">新闻评论 Commentary</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="../../pandemic/pandemic.html">疫情 Pandemic</a>
+                                    <li><a href="https://space.bilibili.com/1911328064">哔哩哔哩</a></li>
+                                    <li><a href="https://www.ximalaya.com/zhubo/224088273">喜马拉雅</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Single Footer Widget -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-footer-widget">
+                                <div class="footer-widget-title">
+                                    <h4 class="font-pt">海外平台</h4>
+                                </div>
+                                <ul class="footer-widget-menu">
+                                    <li><a href="https://www.facebook.com/groups/1106540679700818">Facebook</a></li>
+                                    <li><a href="https://www.youtube.com/channel/UCGVsW3aDXG9-l9rQfBTuhoQ">YouTube</a>
                                     </li>
                                 </ul>
-                                <!-- Search Form -->
-                                <div class="header-search-form mr-auto">
-                                    <form action="#">
-                                        <input type="search" placeholder="Input your keyword then press enter..." id="search" name="search">
-                                        <input class="d-none" type="submit" value="submit">
-                                    </form>
-                                </div>
-                                <!-- Search btn -->
-                                <div id="searchbtn">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </div>
                             </div>
-                        </nav>
+                        </div>
+
+                        <!-- Single Footer Widget -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-footer-widget">
+                                <div class="footer-widget-title">
+                                    <h4 class="font-pt">联系我们</h4>
+                                </div>
+                                <ul class="footer-widget-menu">
+                                    <li><a href="mailto:madnews2020@gmail.com">madnews2020@gmail.com</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-footer-widget">
+                                <img src="../img/core-img/QR_Code.jpg" alt="QR Code" width="130" height="130">
+                            </div>
+                        </div>
+
+
+
+
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</header>
-<!-- Header Area End -->
 
-
-<!-- Breadcumb Area Start -->
-<!---
-<div class="breadcumb-area section_padding_50">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="breacumb-content d-flex align-items-center justify-content-between">
-                      <div class="gazette-post-tag">
-                        <a href="#">politics</a>
-                    </div>
-                    <p class="editorial-post-date text-dark mb-0">March 29, 2016</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-    --->
-<!-- Breadcumb Area End -->
-
-
-<!-- Editorial Area Start -->
-<section class="gazatte-editorial-area section_padding_100 bg-dark">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="editorial-post-slides owl-carousel">
-
-                    <!-- Editorial Post Single Slide -->
-                    <div class="editorial-post-single-slide">
-                        <div class="row">
-                            <div class="col-12 col-md-5">
-                                <div class="editorial-post-thumb">
-                                    <img src="img/JapanProtest.png" alt="抗议东京奥运会的日本民众">
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-7">
-                                <div class="editorial-post-content">
-                                    <!-- Post Tag -->
-                                    <div class="gazette-post-tag">
-                                        <a style="color:white">麦迪讯专栏第26期</a>
-                                    </div>
-                                    <h2><a href="Tokyo_Olympics.html" class="font-pt mb-15">东京奥运<br>办还是不办</a></h2>
-                                    <p class="editorial-post-date mb-15">2021/2/23</p>
-                                    <p>基于以下原因，本社评论员目前仍倾向于认为东京奥运将会举办。</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Editorial Post Single Slide -->
-                    <div class="editorial-post-single-slide">
-                        <div class="row">
-                            <div class="col-12 col-md-5">
-                                <div class="editorial-post-thumb">
-                                    <img src="img/Nomadland_Nomadland.jpg" alt="Nomadland">
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-7">
-                                <div class="editorial-post-content">
-                                    <!-- Post Tag -->
-                                    <div class="gazette-post-tag">
-                                        <a style="color:white">麦迪讯专栏第35期</a>
-                                    </div>
-                                    <h2><a href="Nomadland.html" class="font-pt mb-15">创造历史，<br>赵婷携《无依之地》获得小金人</a></h2>
-                                    <p class="editorial-post-date mb-15">2021/4/25</p>
-                                    <p>当赵婷获奖的消息传出，远在大洋彼岸的中国却没有爆发“赵婷热”，
-                                非但没有媒体为她喝彩，反而连报道该新闻的媒体都寥寥无几。</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Editorial Post Single Slide -->
-                    <div class="editorial-post-single-slide">
-                        <div class="row">
-                            <div class="col-12 col-md-5">
-                                <div class="editorial-post-thumb">
-                                    <a href="about-us.html" class="font-pt mb-15"><img src="img/members-img/group1.jpg" alt="社团成员"></a>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-7">
-                                <div class="editorial-post-content">
-                                    <!-- Post Tag -->
-                                    <div class="gazette-post-tag">
-                                        <a style="color:white">Intro</a>
-                                    </div>
-                                    <h2><a href="about-us.html" class="font-pt mb-15">麦迪讯社团介绍</a></h2>
-                                    <p class="editorial-post-date mb-15">2019-2021</p>
-                                    <p>麦迪讯成立于2019年秋季，是一个开放，包容，和谐，奋进的新媒体社团。目前我们社团的公众号关注人数已经达到三千人以上。我们社团成立的初衷是为了服务麦迪逊当地的华人学生，为他们带来本地和国际的要闻。随着麦迪讯的发展，我们涉及的领域不断扩大。作为一个不断壮大的新媒体平台，我们现在立志于分享留学生的观点，增进中美年轻人之间的相互理解。现在我们社团已经包含了微信公众号，Facebook，BiliBili，喜马拉雅等平台，并且囊括了麦迪讯，新闻简讯，专栏，读书会等栏目，内容也从时事政治扩大到了金融，文学等领域。</p>
-                                </div>
+            <!-- Bottom Footer Area -->
+            <div class="bottom-footer-area">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center justify-content-center">
+                        <div class="col-12">
+                            <div class="copywrite-text">
+                                <p>
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    Copyright &copy;
+                                    <script>
+                                        document.write(new Date().getFullYear());
+                                    </script> 麦迪讯 All rights reserved | Template made by <a href="https://colorlib.com"
+                                        target="_blank">Colorlib</a>
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<!-- Editorial Area End -->
+        </footer>
+        <!-- Footer Area End -->
 
-<section class="catagory-welcome-post-area section_padding_100">
-    <div class="container">
-        <div class="row">
-            
-           <div class="col-12 col-md-4">
-                <!-- Gazette Welcome Post -->
-                <div class="gazette-welcome-post">
-                    <!-- Post Tag -->
-                    <div class="gazette-post-tag">
-                        <a style="color:white">麦迪讯【社论】第41期</a>
-                    </div>
-                    <a href="41_Stars_Will_Shine_Above_The_Valley_Floor.html" class="font-pt" target="_blank" title="在新标签页打开专栏"><h2 class="font-pt">就算是“土猪”，也可以仰望星空</h2></a>
-                    <p class="gazette-post-date">2021/05/31</p>
-                    <!-- Post Thumbnail -->
-                    <div class="blog-post-thumbnail my-5">
-                        <img src="img/LyingFlat_Stakhanov.png" alt="斯达汉诺夫" style="width:300;height:300">
-                    </div>
-                    <!-- Post Excerpt -->
-                    <p>我们不仅要做那个仰望星空的人，也要做那个搭梯子的人。<br /></p>
-                    <!-- Reading More -->
-                    <div class="post-continue-reading-share mt-30">
-                        <div class="post-continue-btn">
-                            <a href="41_Stars_Will_Shine_Above_The_Valley_Floor.html" class="font-pt" target="_blank" title="在新标签页打开专栏">欢迎阅读 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-            
-            <div class="col-12 col-md-4">
-                <!-- Gazette Welcome Post -->
-                <div class="gazette-welcome-post">
-                    <!-- Post Tag -->
-                    <div class="gazette-post-tag">
-                        <a style="color:white">麦迪讯【社论】第40期</a>
-                    </div>
-                    <a href="40_Lying_Flat.html" class="font-pt" target="_blank" title="在新标签页打开专栏"><h2 class="font-pt">年轻人选择“躺平”有罪否？</h2></a>
-                    <p class="gazette-post-date">2021/05/31</p>
-                    <!-- Post Thumbnail -->
-                    <div class="blog-post-thumbnail my-5">
-                        <img src="img/LyingFlat_Stakhanov.png" alt="斯达汉诺夫" style="width:300;height:300">
-                    </div>
-                    <!-- Post Excerpt -->
-                    <p>“躺平”真的是洪水猛兽吗？“躺平”真的会掀起旷工潮吗？它的背后究竟有着什么样的背景呢？<br /></p>
-                    <!-- Reading More -->
-                    <div class="post-continue-reading-share mt-30">
-                        <div class="post-continue-btn">
-                            <a href="40_Lying_Flat.html" class="font-pt" target="_blank" title="在新标签页打开专栏">欢迎阅读 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- jQuery (Necessary for All JavaScript Plugins) -->
+        <script src="../js/jquery/jquery-2.2.4.min.js"></script>
+        <!-- Popper js -->
+        <script src="../js/popper.min.js"></script>
+        <!-- Bootstrap js -->
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- Plugins js -->
+        <script src="../js/plugins.js"></script>
+        <!-- Active js -->
+        <script src="../js/active.js"></script>
 
-            <div class="col-12 col-md-4">
-                <!-- Gazette Welcome Post -->
-                <div class="gazette-welcome-post">
-                    <!-- Post Tag -->
-                    <div class="gazette-post-tag">
-                        <a style="color:white">麦迪讯【社论】第39期</a>
-                    </div>
-                    <a href="39_Gansu_Cross-Country_Marathon.html" class="font-pt" target="_blank" title="在新标签页打开专栏"><h2 class="font-pt">是天灾，更是人祸——甘肃越野马拉松的惨痛教训</h2></a>
-                    <p class="gazette-post-date">2021/05/24</p>
-                    <!-- Post Thumbnail -->
-                    <div class="blog-post-thumbnail my-5">
-                        <img src="img/Gansu_Cross-Country_Marathon_Scene.png" alt="甘肃越野马拉松实景" style="width:300;height:300">
-                    </div>
-                    <!-- Post Excerpt -->
-                    <p>我们必须摆脱这种“有事全赖老天爷”的错误思想，正可谓天地无情人有情，自然无法人有法。</p>
-                    <!-- Reading More -->
-                    <div class="post-continue-reading-share mt-30">
-                        <div class="post-continue-btn">
-                            <a href="39_Gansu_Cross-Country_Marathon.html" class="font-pt" target="_blank" title="在新标签页打开专栏">欢迎阅读 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-4">
-                <!-- Gazette Welcome Post -->
-                <div class="gazette-welcome-post">
-                    <!-- Post Tag -->
-                    <div class="gazette-post-tag">
-                        <a style="color:white">麦迪讯【社论】第38期</a>
-                    </div>
-                    <a href="38_About_Chengdu_NO 49_Middle_School.html" class="font-pt"
-                               target="_blank" title="在新标签页打开专栏"><h2 class="font-pt">记一次有必要的失误——由成都四十九中事件所想到的</h2></a>
-                    <p class="gazette-post-date">2021/05/17</p>
-                    <!-- Post Thumbnail -->
-                    <div class="blog-post-thumbnail my-5">
-                        <img src="img/NO 49_Scene.png" alt="成都四十九中">
-                    </div>
-                    <!-- Post Excerpt -->
-                    <p>关心同胞的尊严并没有错，关心社会正义更不是“境外势力”的代名词。</p>
-                    <!-- Reading More -->
-                    <div class="post-continue-reading-share mt-30">
-                        <div class="post-continue-btn">
-                            <a href="38_About_Chengdu_NO 49_Middle_School.html" class="font-pt"
-                               target="_blank" title="在新标签页打开专栏">欢迎阅读 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-           
-            <div class="col-12 col-md-6">
-                <!-- Gazette Welcome Post -->
-                <div class="gazette-welcome-post">
-                    <!-- Post Tag -->
-                    <div class="gazette-post-tag">
-                        <a href="#">Politices</a>
-                    </div>
-                    <h2 class="font-pt">What's behind the world obsession with gems?</h2>
-                    <p class="gazette-post-date">March 29, 2016</p>
-                    <!-- Post Thumbnail -->
-                    <div class="blog-post-thumbnail my-5">
-                        <img src="img/blog-img/22.jpg" alt="post-thumb">
-                    </div>
-                    <!-- Post Excerpt -->
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ultrices egestas nunc, quis venenatis orci tincidunt id. Fusce commodo blandit eleifend.</p>
-                    <!-- Reading More -->
-                    <div class="post-continue-reading-share mt-30">
-                        <div class="post-continue-btn">
-                            <a href="#" class="font-pt">Continue Reading <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <!-- Gazette Welcome Post -->
-                <div class="gazette-welcome-post d-md-flex align-items-center">
-                    <!-- Post Thumbnail -->
-                    <div class="blog-post-thumbnail">
-                        <img src="img/blog-img/23.jpg" alt="post-thumb">
-                    </div>
-                    <div class="welcome-post-contents ml-30">
-                        <!-- Post Tag -->
-                        <div class="gazette-post-tag">
-                            <a href="#">Politices</a>
-                        </div>
-                        <h2 class="font-pt">Justice Department rolls guidance on fining poor defendants </h2>
-                        <p class="gazette-post-date mb-15">March 29, 2016</p>
-                        <!-- Post Excerpt -->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ultrices egestas nunc, quis venenatis orci tincidunt id. Fusce commodo blandit eleifend.</p>
-                        <!-- Reading More -->
-                        <div class="post-continue-reading-share mt-15">
-                            <div class="post-continue-btn">
-                                <a href="#" class="font-pt">Continue Reading <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12">
-                <div class="gazette-pagination-area">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next"><i class="fa fa-angle-right"></i></a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- Footer Area Start -->
-<footer class="footer-area bg-img background-overlay" style="background-image: url(img/bg-img/footer_bg.jpg);">
-    <!-- Top Footer Area -->
-    <div class="top-footer-area section_padding_100_70">
-        <div class="container">
-            <div class="row">
-                <!-- Single Footer Widget -->
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="single-footer-widget">
-                        <div class="footer-widget-title">
-                            <h4 class="font-pt">国内平台</h4>
-                        </div>
-                        <ul class="footer-widget-menu">
-                            <li><a href="https://weixin.sogou.com/weixin?type=1&s_from=input&query=madison_news">微信公众号</a></li>
-                            <li><a href="https://space.bilibili.com/1911328064">哔哩哔哩</a></li>
-                            <li><a href="https://www.ximalaya.com/zhubo/224088273">喜马拉雅</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Single Footer Widget -->
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="single-footer-widget">
-                        <div class="footer-widget-title">
-                            <h4 class="font-pt">海外平台</h4>
-                        </div>
-                        <ul class="footer-widget-menu">
-                            <li><a href="https://www.facebook.com/groups/1106540679700818">Facebook</a></li>
-                            <li><a href="https://www.youtube.com/channel/UCGVsW3aDXG9-l9rQfBTuhoQ">YouTube</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Single Footer Widget -->
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="single-footer-widget">
-                        <div class="footer-widget-title">
-                            <h4 class="font-pt">联系我们</h4>
-                        </div>
-                        <ul class="footer-widget-menu">
-                            <li><a href="mailto:madnews2020@gmail.com">madnews2020@gmail.com</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="single-footer-widget">
-                        <img src="img/core-img/QR_Code.jpg" alt="QR Code" width="130" height="130">
-                    </div>
-                </div>
-
-
-
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Bottom Footer Area -->
-    <div class="bottom-footer-area">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center justify-content-center">
-                <div class="col-12">
-                    <div class="copywrite-text">
-                        <p>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>
-                                    document.write(new Date().getFullYear());
-                                </script> 麦迪讯 All rights reserved | Template made by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- Footer Area End -->
-
-
-<!-- jQuery (Necessary for All JavaScript Plugins) -->
-<script src="../js/jquery/jquery-2.2.4.min.js"></script>
-<!-- Popper js -->
-<script src="../js/popper.min.js"></script>
-<!-- Bootstrap js -->
-<script src="../js/bootstrap.min.js"></script>
-<!-- Plugins js -->
-<script src="../js/plugins.js"></script>
-<!-- Active js -->
-<script src="../js/active.js"></script>
-
-</body>
+    </body>
 
 </html>
