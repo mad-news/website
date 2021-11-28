@@ -274,7 +274,7 @@ img {
 }
 
 #scrollUp {
-    background-color: #ff084e;
+    background-color: #D94A64;
     border-radius: 0;
     bottom: 0;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
@@ -689,13 +689,14 @@ img {
     text-transform: uppercase;
     margin-bottom: 0;
     position: absolute;
-    background-color: #ff0303;
+    background-color: #D94A6480;
     height: 30px;
     line-height: 30px;
     width: 50%;
     text-align: center;
     top: 0;
     left: 0;
+
 }
 
 .gradient-background-overlay {
@@ -763,7 +764,7 @@ img {
 }
 
 .dont-miss-post-content a:hover {
-    color: #ff0303;
+    color: #D94A64;
 }
 
 .dont-miss-post-content span {
@@ -784,7 +785,7 @@ img {
 }
 
 .subscribe-form button {
-    background-color: #ff0303;
+    background-color: #D94A64;
     color: #fff;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -796,7 +797,7 @@ img {
 .gazette-post-tag a {
     font-size: 14px;
     font-weight: 700;
-    background-color: #ff0303;
+    background-color: #D94A64;
     color: #fff;
     text-transform: uppercase;
     padding: 5px 10px;
@@ -856,6 +857,11 @@ img {
     color: #ff0303;
 }
 
+.gazette-todays-post
+{
+    margin-right: 45px;
+}
+
 .gazette-heading h4 {
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -868,7 +874,7 @@ img {
     font-size: 14px;
     line-height: 2;
     margin-top: 15px;
-}
+}  
 
 .todays-post-thumb {
     -webkit-box-flex: 0;
