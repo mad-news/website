@@ -1308,3 +1308,7 @@ ol li{
         list-style-type:decimal;
         list-style-position:inside;
 }
+
+.gazette-post-discussion-area{
+    display:none;
+}
