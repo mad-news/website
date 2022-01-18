@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>麦迪讯 | AOC劣势3：金钱</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="../img/core-img/logo.jpg">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="../css/core-style.css">
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Responsive CSS -->
+    <link href="../css/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Header Area Start -->
+    <header class="header-area">
+        <div class="top-header">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <!-- Breaking News Area -->
+                    <div class="col-12 col-md-6">
+                        <div class="breaking-news-area">
+                            <h5 class="breaking-news-title">近日要闻</h5>
+                            <div id="breakingNewsTicker" class="ticker">
+                                <ul>
+                                    <li><a href="#">[2021/6/20]中国累计报告接种新冠疫苗超10亿剂次</a></li>
+                                    <li><a href="#">[2021/6/19]中国塔里木盆地新发现10亿吨超深油气区</a></li>
+                                    <li><a href="#">[2021/6/18]美俄日内瓦峰会结束</a></li>
+                                    <li><a href="#">[2021/6/16]中国神州12号飞船将在6月17日发射升空</a></li>
+                                    <li><a href="#">[2021/6/15]和贝佐斯飞往太空的票价：2800万美元</a></li>
+                                    <li><a href="#">[2021/6/13]欧盟峰会：中国，气候，发展中国家</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Stock News Area -->
+                    <div class="col-12 col-md-6">
+                        <div class="stock-news-area">
+                            <div id="stockNewsTicker" class="ticker">
+                                <ul>
+                                    <li>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>麦迪逊最高气温</span>
+                                                <span>6.23</span>
+                                            </div>
+                                            <div class="stock-index minus-index">
+                                                <h4>26℃</h4>
+                                            </div>
+                                        </div>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>麦迪逊最低气温</span>
+                                                <span>6.23</span>
+                                            </div>
+                                            <div class="stock-index plus-index">
+                                                <h4>14℃</h4>
+                                            </div>
+                                        </div>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>麦迪逊天气</span>
+                                                <span>6.23</span>
+                                            </div>
+                                            <div class="text">
+                                                <h4 style="color:white">暴雨</h4>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>麦迪逊最高气温</span>
+                                                <span>6.24</span>
+                                            </div>
+                                            <div class="stock-index minus-index">
+                                                <h4>25℃</h4>
+                                            </div>
+                                        </div>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>麦迪逊最低气温</span>
+                                                <span>6.24</span>
+                                            </div>
+                                            <div class="stock-index plus-index">
+                                                <h4>18℃</h4>
+                                            </div>
+                                        </div>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>麦迪逊天气</span>
+                                                <span>6.24</span>
+                                            </div>
+                                            <div class="text">
+                                                <h4 style="color:white">暴雨</h4>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>麦迪逊最高气温</span>
+                                                <span>6.25</span>
+                                            </div>
+                                            <div class="stock-index minus-index">
+                                                <h4>26℃</h4>
+                                            </div>
+                                        </div>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>麦迪逊最低气温</span>
+                                                <span>6.25</span>
+                                            </div>
+                                            <div class="stock-index plus-index">
+                                                <h4>19℃</h4>
+                                            </div>
+                                        </div>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>麦迪逊天气</span>
+                                                <span>6.25</span>
+                                            </div>
+                                            <div class="text">
+                                                <h4 style="color:white">雷阵雨</h4>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Middle Header Area -->
+        <div class="middle-header">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <!-- Logo Area -->
+                    <div class="col-12 col-md-4">
+                        <div class="logo-area">
+                            <a href="../index.html"><img src="../img/core-img/logo_madnews.png" alt="logo"></a>
+                        </div>
+                    </div>
+                    <!-- Header Advert Area -->
+                    <div class="col-12 col-md-8">
+                        <div class="header-advert-area">
+                            <img src="../img/bg-img/madnews_bg.png" alt="header-add">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>            
+        <!-- Bottom Header Area -->
+        <div class="bottom-header">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <div class="main-menu">
+                            <nav class="navbar navbar-expand-lg">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#gazetteMenu" aria-controls="gazetteMenu" aria-expanded="false"
+                                    aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
+                                <div class="collapse navbar-collapse" id="gazetteMenu">
+                                    <ul class="navbar-nav mr-auto">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">目录 Pages</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="../index.html">首页 Home</a>
+                                                <a class="dropdown-item" href="../category.html">分类 Category</a>
+                                                <a class="dropdown-item" href="../about.html">介绍 About</a>
+                                                <a class="dropdown-item" href="../platform.html">平台 Platform</a>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class='nav-link' href='../politics/category.html'>政治 Politics</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../business/category.html">财经 Business</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../society/category.html">社会 Society</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../tech/category.html">科技 Tech</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../recreation/category.html">文体 Recreation</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../commentary/category.html">新闻评论
+                                                Commentary</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../pandemic/pandemic.html">疫情 Pandemic</a>
+                                        </li>
+                                    </ul>
+                                    <!-- Search Form -->
+                                    <div class="header-search-form mr-auto">
+                                        <form action="#">
+                                            <input type="search"
+                                                placeholder="Input your keyword then press enter..." id="search"
+                                                name="search">
+                                            <input class="d-none" type="submit" value="submit">
+                                        </form>
+                                    </div>
+                                    <!-- Search btn -->
+                                    <div id="searchbtn">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Area End -->
+
+    <section class="single-post-area">
+        <!-- Single Post Title -->
+        <div class="single-post-title bg-img background-overlay" style="background-image: url(../img/bg-img/politics_bg.png);">
+            <div class="container h-100">
+                <div class="row h-100 align-items-end">
+                    <div class="col-12">
+                        <div class="single-post-title-content">
+                            <!-- Post Tag -->
+                            <div class="gazette-post-tag">
+                                <a href="">Politics</a>
+                            </div>
+                            <h2 class="font-pt">AOC劣势3：金钱</h2>
+                            <p>January 20, 2021</p>
+                            <p>作者：格鲁希</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="single-post-contents">
+            <div class="container">
+                <div class="row justify-content-center">
+
+                    <div class="col-12 col-md-8">
+                        <div class="single-post-text">
+                            <p><b>“定义建制派 Establishment”</b></p>
+                            <p>在美国的政治中，存在着一个被称作“建制派”（Establishment）的政治精英阶层。他们身居高位，主张维护现有体制和权力结构。约瑟夫克劳利（Joe Crowley）就是这样一位建制派的代表。56岁的他已经在纽约第十四选区连任了10届众议员。到2018年时，他已经是众议院超过两百位民主党议员中排名第四的领袖人物，克劳利甚至已经开始谋求起了议长的位置，成为了南希佩洛西的接班人选。自从2004年开始，他在民主党初选中就没有对手，直到2018年AOC的出现。</b></p>
+                            <p>如果你对美国近两年的政治有所了解的话，那么你一定听说过Alexandria Ocasio-Cortez（AOC）的大名。在2018年的民主党初选中，这位寂寂无名的28岁拉丁裔女性横空出世，一举击败了建制派精英约瑟夫克劳利，成为了众议员。本系列文章将以AOC和克劳利的这场选举为例，介绍建制派如克劳利如何长期保持自身权力，以及AOC这样的左翼反建制派如何拿下这场惊人且不易的胜利。</b></p>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="single-post-thumb">
+                            <center>
+                                <img src="img/aoc2img1.jpg" alt="" width="600">
+                                <p style="font-size:13px">2018年轰动一时的纽约第十四选区民主党初选，政治新人AOC（右）爆冷击败老牌政客克劳利（左）</p>
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-8">
+                        <div class="single-post-text">
+                            <p>在政策上，AOC比主流民主党人（如克劳利）更左，更激进。但是由于两党对美国政治的垄断，AOC才进入民主党初选，来谋求进入国会的机会。她所在的纽约第十四选区是民主党的“铁盘”，打败当地的共和党对手不难。但是这不意味着AOC初出茅庐就能一帆风顺地成为议员，相反的是，已经在该选区连任十届的克劳利才是AOC真正的对手。</b></p>
+                            <p>这也就是为什么在以纽约时报为代表的美国媒体上，介绍AOC的异军突起时用大量篇幅描述了她如何在党内初选中打败克劳利，而不提她的共和党敌人。<a href="https://www.nytimes.com/2018/06/26/nyregion/joseph-crowley-ocasio-cortez-democratic-primary.html">[1]</a></p>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="single-post-thumb">
+                            <center>
+                                <img src="img/aoc2img2.jpg" alt="" width="600">
+                                <p style="font-size:13px">如果在议会制的欧洲国家，AOC和克劳利可以各自代表一个党，不需要在民主党内决出一人</p>
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-8">
+                        <div class="single-post-text">
+                            <p><b>竞选中的金钱</b></p>
+                            <p>在美国选举中，金钱极其重要。竞选团队和广告宣传都需要大量的钱来维持，如果没有钱，绝大多数政客都没有办法让选民知道自己的存在，更不要说自己的政策和履历了。
+                                <br>据统计，从2000到2016，90%以上的众议员选举赢家都是花钱最多的那位候选人，唯一的例外是2010年中期选举，赢家比例也为86%。 如此夸张的数据证明了金钱的力量，如果不是偶尔有AOC这样的黑马作为反例，金钱似乎真的能决定一切选举的结果。</br>
+                                <br>能够决定胜利的金钱从哪里来呢？美国的政治捐赠（political donation）主要分三大类，个人捐赠，政治行动委员会（PAC）和超级政治行动委员会（Super PAC）。</br>
+                                <br>个人捐赠简单明了，每届选举每人支持一名候选人最多2800刀。2800刀是一个很大的数额，一般只有利益集团的说客和代表，以及中上层美国精英才能负担得起，而普通美国民众对政客捐赠一般在200刀以下，这在接下来的分析中会有所区分。</br>
+                                <br>虽然法律上规定企业和协会不能向候选人捐款，但是企业的股东和雇员，协会的会员，都是可以合法的将钱交给政治行动委员会（Political Action Committee），然后政治行动委员会再把钱捐给候选人，每届选举最多5000刀。政治行动委员会非常普及，成立也不需要成本，所以企业基本上不受约束，可以自由且合法地捐赠给政客。</br>
+                                <br>最后，在十年前的联合公民诉联邦选举委员会案 (Citizens United v. FEC)上，最高法院判决支持将政治活动的献金等同于言论自由。最具争议的超级政治行动委员会（Super PAC）应运而生。跨国集团，富豪巨亨，本国甚至是国外的政治组织，可以将无限量的钱投入超级政治行动委员会，在“不和候选人团队交流”的情况下，超级政治行动委员会可以无限制地使用这些钱以支持某位候选人（主要用来购买政治宣传）。超级政治委员会在2020选举中共募集了超过34亿美元，花费了21亿，对大选结果有着举足轻重的影响。 </br>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="single-post-thumb">
+                            <center>
+                                <img src="img/aoc3img1.jpg" alt="" width="600">
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-8">
+                        <div class="single-post-text">
+                            <p><b>克劳利的资金优势</b></p>
+                            <p>从数据上看，建制派克劳利财大气粗。初选发生在六月二十六号，五月三十一日的数据显示克劳利通过个人捐赠和政治行动委员会（PAC）共募集了280万美元，而AOC只有12万。 六月六日的数据差距稍小，克劳利330万，AOC30万，也是十一倍的差距。  克劳利雄厚的资金意味着专业而庞大的竞选团队和铺天盖地的广告。要知道，本次初选只有29778人参与，300万的资金的影响力不需要过多的解释。</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-8">
+                        <div class="single-post-text">
+                            <p><b>不同的捐款者</b></p>
+                            <p>资金的巨大差距并不一定能说明克劳利有建制派的优势，完全有可能是克劳利众望所归，普通民众踊跃捐款的结果。再深入一层，两人的资金来源才真正体现出了建制派和反建制新人的区别。克劳利最大的献金来源是代表企业和协会的政治行动委员会（PAC），足足175万，占比超50%，其次是单笔超过200美元的大额政治捐赠，100万有余，占比33%。而一般被认为代表了普通美国民众支持的小额政治捐赠，克劳利只有不到3万，占比为0.88%。如此畸形的比例体现出了大企业和大利益集团对克劳利的坚定支持，以及普通民众对其的冷漠。</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="single-post-thumb">
+                            <center>
+                                <img src="img/aoc3img2.png" alt="" width="600">
+                                <p style="font-size:13px">克劳利的政治捐赠比例，小额捐赠少得可怜，不到百分之一</p>
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-8">
+                        <div class="single-post-text">
+                            <p>
+                                <br>对AOC的政治捐赠中，30%来自于超过200美元的大额政治捐赠，另外70%则全部是小额捐赠。她信奉的进步主义对金钱政治的反对使AOC不接受非左翼组织外的政治行动委员会（PAC）捐款，当然，本来也没有什么大企业会资助AOC这样的激进左翼。（打败克劳利后，AOC接受了来自民主党内政治行动委员会的七万五千美元，占比3%，用到了和共和党对手的大选中）</br>
+                                <br>克劳利那不到1%的小额政治捐款比例看似荒谬，却是议员们的普遍现象。在下图中，我们可以清晰地看出纽约州十二位众议员的政治捐赠中，没有任何一位小额政治捐款比例能到10%，更不用说AOC的70%了。当然，不光民主党，共和党也非常依赖大额政治捐赠和政治行动委员会，在这里不多赘述。虽然他们收不到普通民众的金钱支持，两党的建制派们通过利益集团处获得了庞大的献金资助，然后凭借着金钱优势碾压他们的竞争对手。</br>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="single-post-thumb">
+                            <center>
+                                <img src="img/aoc3img3.png" alt="" width="600">
+                                <p style="font-size:13px">AOC的小额捐赠比例碾压其他所有纽约州众议员</p>
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-8">
+                        <div class="single-post-text">
+                            <p><b>政治行动委员会的参与</b></p>
+                            <p>
+                                <br>以上统计数据只包括了两位候选人自己募集到的资金（个人捐赠和政治行动委员会（PAC）），拥有海量资金的超级政治行动委员会（Super PAC）也赞助了克劳利的选战。由于超级政治行动委员会在明面上不能和候选人的竞选团队合作，也不用向政府上报资金流向，所以其开销比较隐秘，难以追查，被反对者更是批评为“黑钱”。常用的追踪方式是统计支持和反对某候选人，而资金来源又不是选举参与者的外部花费（超级政治行动委员会不能和候选人团队合作，一般花销用于购买大量政治宣传）。 举个例子，A和B竞选，有50万外部花费用于攻击B，又有30万外部花费用于支持A,一般认为Super PAC共花费80万帮助A的选战。</br>
+                                <br>根据公开秘密（Open Secret，竞选资金的权威统计网站）上的数据，我们可以清晰看到在超级政治行动委员会的支持上，克劳利对AOC的绝对碾压。AOC方有13000美元的外部花费（2000支持AOC+11000反对克劳利）。克劳利方则有4000美元支持克劳利，和63万3千反对AOC！ 足足51倍差距！</br>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="single-post-thumb">
+                            <center>
+                                <img src="img/aoc3img4.png" alt="" width="800">
+                                <p style="font-size:13px">超级政治行动委员会的资金涌入民主党初选，绝大部分都用在反对AOC上</p>
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-8">
+                        <div class="single-post-text">
+                            <p>这些外部资金的来源相当有意思，AOC和克劳利的这次选战并没有吸引到什么民主党超级政治行动委员会的资金（毕竟是民主党内战），十几个组织只有一个花费过万。但是，克劳利却意想不到的获得了一个共和党超级政治行动委员会的大力扶持：63万3千攻击AOC的资金均来自名为“未来45”（Future 45）的Super PAC，而该组织的政治倾向极其保守，向来支持共和党，特别是特朗普总统（特朗普是第45任美国总统，该组织在他为成为总统时就对其保驾护航）。 “未来45”在2018年选举中一共花费了440万美元，攻击了5位民主党人，包括议长佩洛西，进步派参议员桑德斯，沃伦（Elizabeth Warren），进步派众议员沃特斯（Maxine Waters） ，最后就是AOC。在这五人中，其他四个都是民主党现任议员，共和党和保守派对其攻击没有问题,只有AOC还没当上议员,还在挑战克劳利这个民主党,“未来45”对AOC的攻击就很蹊跷了。笔者的判断是克劳利作为保守的民主党建制派，和保守的共和党关系并没有那么恶劣，他请求“未来45”助他保住席位，毕竟AOC和共和党的政策差距更大。</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="single-post-thumb">
+                            <center>
+                                <img src="img/aoc3img5.png" alt="" width="600">
+                                <img src="img/aoc3img6.png" alt="" width="600">
+                                <p style="font-size:13px">第一种分法下，克劳利得到共和党资金的帮助会很奇怪，但是第二种分法下，<br>保守派超级政治行动委员会支持同为保守派的克劳利就不足为奇了</br></p>
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="single-post-thumb">
+                            <center>
+                                <img src="img/aoc3img7.png" alt="" width="600">
+                                <p style="font-size:13px">只攻击民主党的“未来45”，为什么在克劳利和AOC的选战中只攻击AOC？</p>
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-8">
+                        <div class="single-post-text">
+                            <p><b>细看克劳利的金主：金钱对政策的影响</b></p>
+                            <br>从超级政治行动委员会“未来45”对克劳利的支持中，我们可以看出政策主张/意识形态和金钱政治的关系。是因为克劳利的政策保守，所以“未来45”支持克劳利呢？还是因为想要“未来45”的钱，所以克劳利主张保守政策呢？想要得到这个问题的答案，我们可以继续分析克劳利的资金来源。</br>
+                            <br>废话不说，以下是给予克劳利政治捐赠的企业的不完全列表：(来源记者 Matt Stoller)</br>
+                            <p>互联网企业:Facebook, Google, Microsoft, Intel, Sony, Oracle, Hewlett Packard(HP), eBay</p>
+                            <p>金融企业: Goldman Sachs, Blackrock, Citigroup, The Options Clearinghouse, SIFMA, Charles Schwab, Experion, Quicken, Acxiom, S&P, NASDAQ, Ally Financial, Accenture, Iron Mountain, RIAA, National Structured Settlement Association, Morgan Stanley, Hartford Financial, CME Group, National Venture Capital Association, UBS, Depository Trust and Clearing, Northwestern Mutual, Credit Suisse, Investment Company Institute, Capital One, TD Bank, American Bankers Association, State Street Bank, JP Morgan, Discover, Mortgage Bankers Association, Mastercard, HSBC, American Express, Bank of America, Compass Bancshares, US Bancorp, Independent Community Bankers Association</p>
+                            <p>药企:Regeron Pharma, Genetech, CVS, GlaxoSmithKline, Tiva, Sanofi, Merk, Johnson and Johnson, Eli Lilly, Novartis, Amgen</p>
+                            <p>医保企业:Humana, AFLAC, CIGNA, Liberty Mutual, UnitedHealth Group, National Association of Mutual Insurance Companies, Medtronic, Allstate, Novartis, Swiss Re, State Farm, Davita, Anthem Blue Cross Blue Shield, Tenet, AXA Equitable, Pacific Life, Genworth</p>
+                            <p>医院:the American Hospital Association,Marriott, Loews</p>
+                            <p>军工企业:Raytheon, United Technology, Honeywell, Boeing, Lockheed Martin, BAE Systems, Northrup Grumman</p>
+                            <p>纳税服务:H&R Block, Deloitte, ERNST & YOUNG, Pricewaterhouse Coopers, KPMG</p>
+                            <p>客服:Salesforce</p>
+                            <p>游说:Covington and Burling, Real Estate Roundtable, the Partnership for New York City, Holland and Knight, Arent Fox, Glover Park Group, Greenberg Traurig, Dentons</p>
+                            <p>食品: Anheuser-Busch, Altria (Phillip Morris), Florida Sugar Cane, Constellation Brands, Diageo, Pepsico, American Crystal, Kraft Heintz, Wine and Spirit Wholesalers of America</p>
+                            <p>邮政: UPS, Fedex</p>
+                            <p>通讯: T-Mobile, Altice, Comcast, Verizon, CTIA, Echostar, AT&T</p>
+                            <p>超市：Cisco Systems, Wawa, Home Depot, Jackson Holdings</p>
+                            <p>交通：BNSF Railway, Norfolk Southern, Airbus, Delta, Union Pacific</p>
+                            <p>体育：Major League Baseball</p>
+                            <p>娱乐媒体: Disney, Viacom, News Corp, 21st century Fox, The Internet and Television Association, Universal Music Group, Cox, Warner Media, Charter</p>
+                            <p>能源: Fluor, Edison Electric, General Electric, Dominion Energy, PG&E,  Southern Co.，Applied Materials（材料）</p>
+                            <p>制造业:Toyota, Ford Motor</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-8">
+                        <div class="single-post-text">
+                            <p><b>超过一百个大企业，来自十几个不同产业，不约而同地用大量金钱支持着克劳利的竞选。</b>大企业们肯定不是发善心，而是希望克劳利在政策的制定上为他们服务。之前介绍过，克劳利是民主党建制派，众议院多数派的四号人物，议长的继承人之一，他手上的权力可是不容小觑。通过审视克劳利竞选资金的来源，我们就能理解克劳利很多政策主张和政治举动。</p>
+                            <p>华尔街的大企业们，特别是克劳利的大金主黑石集团（Blackstone Group），可以凭借克劳利在民主党内的影响力，来避免标榜自己反对投机的民主党加大金融监管力度。值得一提的是，克劳利本人对华尔街的支持在民主党内可以说是最极端的，在2010年他强烈反对多德-弗兰克法案对金融机构的监管。 
+                                药企，医保企业，私营医院系统，三股强大的利益集团使民主党建制派止步于中庸的奥巴马医保，磨灭了全民医保的希望，他们则可以不断收取远超其他发达国家的医药费，医保费和医护费。 
+                                拿了互联网和传媒巨头的钱，克劳利自然不会反他们的垄断。
+                                克劳利本人支持了阿富汗战争和饱受争议的伊拉克战争，常年投票赞同美国远高于其他国家的军费，赞助他的几大军工企业应该很满意。
+                                游说机构本来干的就是花钱买政策的勾当，收了他们的钱必受他们的影响。媒体，食品，能源，税收等等重要民生行业的大企业总是希望更少的监管和更多的补贴。克劳利拿了企业的钱，如果企业和民众站到了对立面，他自觉地就会站到企业一边。
+                                </p>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="single-post-thumb">
+                            <center>
+                                <img src="img/aoc3img8.png" alt="" width="500">
+                                <p style="font-size:13px">克劳利2018年前十的贡献者，医保，金融，互联网巨头都榜上有名，排在第一的是代表金融界利益的政治行动委员会</p>
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-8">
+                        <div class="single-post-text">
+                            <p>之前我们提到，相比于进步主义者激进的左翼经济政策，民主党的建制派要保守的多。当我们分析这些保守政策时，我们不光要考虑美国主流政治精英对新自由主义（Neo Liberalism）的推崇，还需要考虑大企业对政客的影响。靠着大企业资助赢下的选举，克劳利自然是要代表他们发声。当然，大企业们百万美元投资的一个众议院四号人物并不构成什么惊天腐败大新闻，也不是什么前所未有的特例，甚至不违法，议长佩洛西也收政治献金，刚当选的新人政客也收，共和党和民主党的建制派也几乎无一例外。</p>
+                            <p>金钱对美国政治的影响可以说是超越党派的。社会问题上，民主党和共和党针锋相对，就像反对堕胎的组织绝对不会支持民主党议员。但在经济问题上，两党的差距其实没有想象中的大，除了油气等少数行业，极度依赖金钱来胜选的政客们都是来者不拒。这也是AOC等进步派的独特之处，她们的左翼政策和其执行政策的决心让大企业不愿意也没办法将其腐化。</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="single-post-thumb">
+                            <center>
+                                <img src="img/aoc3img9.png" alt="" width="600">
+                                <p style="font-size:13px">AOC推文指出克劳利参加共和党金主的募款活动，攻击克劳利的腐败，<br>进一步体现了两党其实没有想象中的那么对立（日期06/22/2018，初选前4天)</br></p>
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="single-post-thumb">
+                            <center>
+                                <img src="img/aoc3img10.png" alt="" width="500">
+                                <p style="font-size:13px">知名学者乔姆斯基：美国只有一个党 “商业党/资本党”，<br>民主党和共和党是其两翼，他们的政策有差别但是（服务大企业）的大方向相同</br></p>
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-8">
+                        <div class="single-post-text">
+                            <p><b>总结</b></p>
+                            <p>AOC vs 克劳利系列文章的前三篇已经全部放出：第一篇介绍了两党对美国政治的垄断，逼迫以AOC为代表的进步派政客加入民主党来获得从政的可能。第二篇和第三篇则分析了AOC所面临的两大困难，即她的建制派对手克劳利的两大优势---人脉和金钱。克劳利在政界的关系提供了从州长到民间组织，从纽约州参议员到纽约市小官员的背书，代表了大量同类政治精英为他的竞选所提供的支持。同时，克劳利从大企业中获得了超AOC十倍的竞选资金，为我们展示了美国政治和金钱的联系。两党垄断，选举中的人脉和金钱，这就是克劳利连任十届的原因，这也是为什么两党建制派主导美国政治的原因。
+                                草根政客如AOC想要打开自己的政治前途，实现自己的进步主义政策，必须突破建制派如克劳利的封锁，正面战胜建制派的金钱与人脉优势。AOC是少数破局之人，而本系列接下来的三篇文章将讲述AOC和她所代表的的左翼反建制派在竞选时拥有的优势。
+                                </p>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="single-post-thumb">
+                            <center>
+                                <img src="img/aoc3img11.png" alt="" width="600">
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-8">
+                        <div class="single-post-text">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gazette-post-discussion-area section_padding_100 bg-gray">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
+                    <!-- Comment Area Start -->
+                    <div class="comment_area section_padding_50 clearfix">
+                        <div class="gazette-heading">
+                            <h4 class="font-bold">评论区</h4>
+                        </div>
+
+                        <ol>
+                            <!-- Single Comment Area -->
+                            <li class="single_comment_area">
+                                <div class="comment-wrapper d-md-flex align-items-start">
+                                    <!-- Comment Meta -->
+                                    <div class="comment-author">
+                                        <img src="../img/blog-img/25.jpg" alt="">
+                                    </div>
+                                    <!-- Comment Content -->
+                                    <div class="comment-content">
+                                        <h5>用户甲</h5>
+                                        <span class="comment-date font-pt text-muted">December 18, 2017</span>
+                                        <p>来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论。</p>
+                                        <a class="reply-btn" href="#">回复 <i class="fa fa-reply" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <ol class="children">
+                                    <li class="single_comment_area">
+                                        <div class="comment-wrapper d-md-flex align-items-start">
+                                            <!-- Comment Meta -->
+                                            <div class="comment-author">
+                                                <img src="../img/blog-img/dm-3.jpg" alt="">
+                                            </div>
+                                            <!-- Comment Content -->
+                                            <div class="comment-content">
+                                                <h5>用户乙</h5>
+                                                <span class="comment-date font-pt text-muted">December 18, 2017</span>
+                                                <p>来自用户乙的评论，来自用户乙的评论，来自用户乙的评论，来自用户乙的评论，来自用户乙的评论，来自用户乙的评论，来自用户乙的评论。</p>
+                                                <a class="reply-btn" href="#">回复 <i class="fa fa-reply" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                    <!-- Leave A Comment -->
+                    <div class="leave-comment-area clearfix">
+                        <div class="comment-form">
+                            <div class="gazette-heading">
+                                <h4 class="font-bold">留言板</h4>
+                            </div>
+                            <!-- Comment Form -->
+                            <form action="#" method="post">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="contact-name" placeholder="您的姓名">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="contact-email" placeholder="您的邮箱">
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="您的评论"></textarea>
+                                </div>
+                                <button type="submit" class="btn leave-comment-btn">提交评论<i class="fa fa-angle-right ml-2"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Area Start -->
+    <footer class="footer-area bg-img background-overlay" style="background-image: url(../img/bg-img/footer_bg.jpg);">
+        <!-- Top Footer Area -->
+        <div class="top-footer-area section_padding_100_70">
+            <div class="container">
+                <div class="row">
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="footer-widget-title">
+                                <h4 class="font-pt">国内平台</h4>
+                            </div>
+                            <ul class="footer-widget-menu">
+                                <li><a href="https://weixin.sogou.com/weixin?type=1&s_from=input&query=madison_news">微信公众号</a></li>
+                                <li><a href="https://space.bilibili.com/1911328064">哔哩哔哩</a></li>
+                                <li><a href="https://www.ximalaya.com/zhubo/224088273">喜马拉雅</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="footer-widget-title">
+                                <h4 class="font-pt">海外平台</h4>
+                            </div>
+                            <ul class="footer-widget-menu">
+                                <li><a href="https://www.facebook.com/groups/1106540679700818">Facebook</a></li>
+                                <li><a href="https://www.youtube.com/channel/UCGVsW3aDXG9-l9rQfBTuhoQ">YouTube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="footer-widget-title">
+                                <h4 class="font-pt">联系我们</h4>
+                            </div>
+                            <ul class="footer-widget-menu">
+                                <li><a href="mailto:madnews2020@gmail.com">madnews2020@gmail.com</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="single-footer-widget">
+                            <img src="../img/core-img/QR_Code.jpg" alt="QR Code" width="130" height="130">
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Footer Area -->
+        <div class="bottom-footer-area">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-12">
+                        <div class="copywrite-text">
+                            <p>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>
+                                    document.write(new Date().getFullYear());
+                                </script> 麦迪讯 All rights reserved | Template made by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Area End -->
+
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="../js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="../js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="../js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="../js/active.js"></script>
+
+</body>
+
+</html>
