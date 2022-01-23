@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>奥密克戎毒株科普以及美国近期新冠疫情分析</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="../img/core-img/logo.jpg">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="../css/core-style.css">
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Responsive CSS -->
+    <link href="../css/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Header Area Start -->
+    <header class="header-area">
+        <div class="top-header">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <!-- Breaking News Area -->
+                    <div class="col-12 col-md-6">
+                        <div class="breaking-news-area">
+                            <h5 class="breaking-news-title">近日要闻</h5>
+                            <div id="breakingNewsTicker" class="ticker">
+                                <ul>
+                                    <li><a href="#">[2021/6/20]中国累计报告接种新冠疫苗超10亿剂次</a></li>
+                                    <li><a href="#">[2021/6/19]中国塔里木盆地新发现10亿吨超深油气区</a></li>
+                                    <li><a href="#">[2021/6/18]美俄日内瓦峰会结束</a></li>
+                                    <li><a href="#">[2021/6/16]中国神州12号飞船将在6月17日发射升空</a></li>
+                                    <li><a href="#">[2021/6/15]和贝佐斯飞往太空的票价：2800万美元</a></li>
+                                    <li><a href="#">[2021/6/13]欧盟峰会：中国，气候，发展中国家</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Stock News Area -->
+                    <div class="col-12 col-md-6">
+                        <div class="stock-news-area">
+                            <div id="stockNewsTicker" class="ticker">
+                                <ul>
+                                    <li>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>麦迪逊最高气温</span>
+                                                <span>6.23</span>
+                                            </div>
+                                            <div class="stock-index minus-index">
+                                                <h4>26℃</h4>
+                                            </div>
+                                        </div>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>麦迪逊最低气温</span>
+                                                <span>6.23</span>
+                                            </div>
+                                            <div class="stock-index plus-index">
+                                                <h4>14℃</h4>
+                                            </div>
+                                        </div>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>麦迪逊天气</span>
+                                                <span>6.23</span>
+                                            </div>
+                                            <div class="text">
+                                                <h4 style="color:white">暴雨</h4>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>麦迪逊最高气温</span>
+                                                <span>6.24</span>
+                                            </div>
+                                            <div class="stock-index minus-index">
+                                                <h4>25℃</h4>
+                                            </div>
+                                        </div>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>麦迪逊最低气温</span>
+                                                <span>6.24</span>
+                                            </div>
+                                            <div class="stock-index plus-index">
+                                                <h4>18℃</h4>
+                                            </div>
+                                        </div>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>麦迪逊天气</span>
+                                                <span>6.24</span>
+                                            </div>
+                                            <div class="text">
+                                                <h4 style="color:white">暴雨</h4>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>麦迪逊最高气温</span>
+                                                <span>6.25</span>
+                                            </div>
+                                            <div class="stock-index minus-index">
+                                                <h4>26℃</h4>
+                                            </div>
+                                        </div>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>麦迪逊最低气温</span>
+                                                <span>6.25</span>
+                                            </div>
+                                            <div class="stock-index plus-index">
+                                                <h4>19℃</h4>
+                                            </div>
+                                        </div>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>麦迪逊天气</span>
+                                                <span>6.25</span>
+                                            </div>
+                                            <div class="text">
+                                                <h4 style="color:white">雷阵雨</h4>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Middle Header Area -->
+        <div class="middle-header">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <!-- Logo Area -->
+                    <div class="col-12 col-md-4">
+                        <div class="logo-area">
+                            <a href="../index.html"><img src="../img/core-img/logo_madnews.png" alt="logo"></a>
+                        </div>
+                    </div>
+                    <!-- Header Advert Area -->
+                    <div class="col-12 col-md-8">
+                        <div class="header-advert-area">
+                            <img src="../img/bg-img/madnews_bg.png" alt="header-add">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Header Area -->
+        <div class="bottom-header">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <div class="main-menu">
+                            <nav class="navbar navbar-expand-lg">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#gazetteMenu" aria-controls="gazetteMenu" aria-expanded="false"
+                                    aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
+                                <div class="collapse navbar-collapse" id="gazetteMenu">
+                                    <ul class="navbar-nav mr-auto">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">目录 Pages</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="../index.html">首页 Home</a>
+                                                <a class="dropdown-item" href="../category.html">分类 Category</a>
+                                                <a class="dropdown-item" href="../about.html">介绍 About</a>
+                                                <a class="dropdown-item" href="../platform.html">平台 Platform</a>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class='nav-link' href='../politics/category.html'>政治 Politics</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../business/category.html">财经 Business</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../society/category.html">社会 Society</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../tech/category.html">科技 Tech</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../recreation/category.html">文体 Recreation</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../commentary/category.html">新闻评论
+                                                Commentary</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../pandemic/pandemic.html">疫情 Pandemic</a>
+                                        </li>
+                                    </ul>
+                                    <!-- Search Form -->
+                                    <div class="header-search-form mr-auto">
+                                        <form action="#">
+                                            <input type="search"
+                                                placeholder="Input your keyword then press enter..." id="search"
+                                                name="search">
+                                            <input class="d-none" type="submit" value="submit">
+                                        </form>
+                                    </div>
+                                    <!-- Search btn -->
+                                    <div id="searchbtn">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Area End -->
+
+    <section class="single-post-area">
+        <!-- Single Post Title -->
+        <div class="single-post-title bg-img background-overlay" style="background-image: url(../img/bg-img/tech_bg.png);">
+            <div class="container h-100">
+                <div class="row h-100 align-items-end">
+                    <div class="col-12">
+                        <div class="single-post-title-content">
+                            <!-- Post Tag -->
+                            <div class="gazette-post-tag">
+                                <a href="#">Tech</a>
+                            </div>
+                            <h2 class="font-pt">奥密克戎毒株科普以及美国近期新冠疫情分析</h2>
+                            <p>January 10, 2021</p>
+                            <p>作者：空谷幽兰</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+
+        <div class="single-post-contents">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8">
+                        <br></br>
+                        <p>最近，奥密克戎毒株在美国的流行打破了许多人对于疫情结束的幻想，奥密克戎以前所未有的速度在美利坚的土地上肆意驰骋，所到之处感染率飙升。那么，奥密克戎毒株究竟和以往的新冠毒株有着怎样的区别？奥密克戎目前流行的情况如何？我们留学生应该如何防御这种病毒呢？本篇文章就将对这几个问题进行深入分析，给尚在美国的海外学子们敲响警钟。
+                            奥密克戎疫情可能是迄今为止传播最为凶险的一波疫情，这样的说法绝非危言耸听。</p>
+                        <br><b>奥密克戎毒株简介</b></br>
+                        <p>奥密克戎，又名B.1.1.529谱系，于2021年11月9日首次在博茨瓦纳被发现，2021年11月24日南非正式向世卫组织报告，世卫组织将该变异株列为“高关注变异株”。此变异株和SARS-COV-2变异株一样，没有任何发病症状的变化，部分感染者不会产生任何症状。南非医学协会主席安吉丽克·库切表示，她发现该变异株的患者感到疲劳和疼痛，却没有咳嗽或味觉以及嗅觉失灵。世卫组织流行病学家阿卜迪·马哈穆德（Abdi Mahamud）表示，越来愈多的研究似乎表明，奥密克戎变异株主要影响上呼吸道，引起较轻的症状。而其他变异株会影响肺部，并可能导致严重的肺炎。不过，以此说法为论据，得出奥密克戎较为“温和”，乃至于不提升自身防护意识的做法是不可取的。事实上，奥密克戎从多种角度上都要比之前的毒株来的更加凶险。
+                        </p>
+                        <center>
+                            <img src="img/omicron1.jpg" alt="" width="530">
+                            <p style="font-size:13px">奥密克戎的基因序列</p>
+                        </center>
+                        <p>首先，是奥密克戎超高的传染率。奥密克戎的变异株突变数量众多，其中刺突蛋白的突变就达32种，它们是感染产生的抗体和许多广泛接种的疫苗的主要抗原靶点，这些突变许多都没有在其他病株中观察到。其中比较值得关注的是刺突蛋白受体结合域上的突变，这些突变主要影响变种的传播效率以及对于抗原的抵抗力。奥密克戎变体总共在受体结合域上有15个突变，这些突变大多位于靠近ACE2（血管紧张素转化酶2型）和受体结合域的结合界面（除了G339D，S371L，S371L和S375F四个突变）。奥密克戎引发的细菌过滤率（BFE）的数据显示，这些突变导致了BFE的剧烈变化，增加了结合区域的亲和力，这就意味着该毒株的传染性增加了。总的来说，累积的BFE变化为2.60kcal/mol, 这就意味着传染率增加了13倍。和其他变种对比来看，奥密克戎比德尔塔毒株的传染率增加了2.8倍。</p>
+                        <center>
+                            <img src="img/omicron2.jpg" alt="" width="530">
+                            <p style="font-size:13px">图A展示了奥密克戎的受体结合域与ACE2的三维模型，<br>图B展示了奥密克戎突变引导的BFE变化，</br>图C展示了奥密克戎相比于其他变种的BFE变化</p>
+                        </center>
+                        <p>其实，从公共卫生的数据中，我们更加能直观的感受到奥密克戎传播的凶险程度。奥密克戎在三周的时间内就取代了德尔塔毒株，成为了美国最流行的毒株，而德尔塔毒株则花了将近三个月才在美国成为最流行的毒株。从这两个毒株在美国的传播效率比较来看，或许奥密克戎的实际传播效率远比德尔塔多了不止2.8倍。</p>
+                        <center>
+                            <img src="img/omicron3.jpg" alt="" width="530">
+                            <p style="font-size:13px">奥密克戎的传播效率（紫色为奥密克戎）</p>
+                        </center>
+                        <center>
+                            <img src="img/omicron4.jpg" alt="" width="530">
+                            <p style="font-size:13px">德尔塔的传播效率（深黄色为德尔塔）</p>
+                        </center>
+                        <p>其次，奥密克戎除了拥有超高的传播效率外，还可以突破已有疫苗的屏障，降低疫苗的有效率。如下图所示，不论接种哪种疫苗，即使接种了两针，疫苗的保护率在面对奥密克戎时都会急剧下降，除了超级免疫抗体以外，似乎没有更好的中和能力的抗体。</p>
+                        <center>
+                            <img src="img/omicron5.jpg" alt="" width="530">
+                            <p style="font-size:13px">两针新冠疫苗对于奥密克戎似乎无计可施</p>
+                        </center>
+                        <p>不过好在，根据研究显示，第三针辉瑞或是moderna疫苗都会极大的提高抗体的中和效率。下图就显示了接种第三针后（包括打同一种疫苗和混打的情况），面对奥密克戎毒株，人体内的抗体浓度比只接种第二针增加了31.8倍。</p>
+                        <center>
+                            <img src="img/omicron6.jpg" alt="" width="530">
+                            <p style="font-size:13px">接种第三针疫苗的效果显著</p>
+                        </center>
+                        <p>最后，奥密克戎的大流行势必意味着后续的变种病毒仍将源源不断地产生，不过，这个未来“新的变种”究竟会朝着更高的感染率进化，还是会增强自身毒性，亦或进化出新的血清型，引发大规模的抗体ADE效应，使其致死率骤增，现在仍是未知数。我们现在唯一能做的，就是重视该病毒，千万不可把该变种视作“大号流感”。</p>
+                        <br><b>美国现阶段疫情分析</b></br>
+                        <p>美国现在的新冠病例经过前一段时间的平稳增加后，再度进入急剧上升的通道之中。前几天，美国的日增病例超过了100万，再度破了世界记录。</p>
+                        <center>
+                            <img src="img/omicron7.jpg" alt="" width="530">
+                            <p style="font-size:13px">美国新冠病例增长曲线图</p>
+                        </center>
+                        <p>这段时间的病例增加集中在以下几个州：佛罗里达，加利福尼亚，新泽西，纽约，纽约（城），得克萨斯，其中佛罗里达州的增长曲线最为陡峭，显示疫情在该州传播的速度最快。</p>
+                        <center>
+                            <img src="img/omicron8.jpg" alt="" width="530">
+                            <p style="font-size:13px">美国六州病例增长数比较</p>
+                        </center>
+                        <p>从每十万人的病例数来看，美国东北地区还有佛罗里达州是疫情最为严重的两块地区。</p>
+                        <center>
+                            <img src="img/omicron9.jpg" alt="" width="530">
+                            <p style="font-size:13px">美国每十万人新冠病例率，颜色由浅到深为病例数由少到多</p>
+                        </center>
+                        <p> 但是，从阳性率来看，美国大部分州的阳性率都已经超过了25%，说明在这些州中，即使有疫苗的保护，也有超过25%检测的人在七天内确诊了covid-19。</p>
+                        <center>
+                            <img src="img/omicron10.jpg" alt="" width="530">
+                            <p style="font-size:13px">美国七天内各州阳性率（深蓝色为阳性率大于25%）</p>
+                        </center>
+                        <p> 按照性别分类，这次的疫情中女性的得病率要高于男性。按照年龄分类，这次疫情中得病率最高的组别是18岁到29岁的年轻人，其次是30-39岁的中年人，然后是40-49岁的中老年人。按照族群分类，得病率最高的族群是黑人，其次是拉丁裔，然后是白人。具体数据详见下表。</p>
+                        <center>
+                            <img src="img/omicron11.jpg" alt="" width="530">
+                            <p style="font-size:13px">按照性别分类的新冠病例增长曲线</p>
+                        </center>
+                        <center>
+                            <img src="img/omicron12.jpg" alt="" width="530">
+                            <p style="font-size:13px">按照年龄组别分类的新冠病例增长曲线</p>
+                        </center>
+                        <center>
+                            <img src="img/omicron13.jpg" alt="" width="530">
+                            <p style="font-size:13px">按照族群分类的新冠病例增长曲线</p>
+                        </center>
+                        <p>从住院率来说，这波疫情给美国带来了41.1%的住院率增长，不过死亡率只有小幅增加，说明美国的医疗系统依旧在有序运作。</p>
+                        <center>
+                            <img src="img/omicron14.jpg" alt="" width="530">
+                            <p style="font-size:13px">美国的住院率急剧增加</p>
+                        </center>
+                        <center>
+                            <img src="img/omicron15.jpg" alt="" width="530">
+                            <p style="font-size:13px">美国的新冠死亡人数小幅增加</p>
+                        </center>
+                        <p>下图是一张全美社会接触导致疫情爆发的地图，可以看到麦迪逊恰好是其中一处，这也部分解释了为什么麦迪逊最近疫情增长如此迅猛的原因。</p>
+                        <center>
+                            <img src="img/omicron16.jpg" alt="" width="530">
+                            <p style="font-size:13px">全美社会性接触事件地图</p>
+                        </center>
+                        <p>以上就是对美国这轮疫情的全部分析了。可以看到，这次的疫情呈现全面开花，多点爆发的特征，年轻人是感染的主要人群。但是，由于奥密克戎看似“温和”的特征，全美完全没有重视这次的疫情。预计这次的疫情会像上次的德尔塔病株一样，持续几个月，乃至更久的时间。</p>
+                        
+                        <br><b>留学生防御措施</b></br>
+                        <p>最后，我们来聊聊留学生该如何防御病毒的问题。首先，对于已经不幸感染的学生来说，最重要的事情莫过于在家休息，多喝水，可以吃一点退烧药，或是莲花清瘟等中成药来控制症状。由于奥密克戎引发的大部分都是轻症，如果事先已经打过疫苗，那么就不用太过担心，在家静养几天后，核酸检测阴性就可以恢复正常生活。</p>
+                        <p>然后，对于尚未感染的留学生们，强烈建议各位接种加强针。一般来说，只要前两针的接种时间超过六个月，就可以接种加强针了。就算是接种了国内疫苗的同学，也可以直接接种加强针。除了接种加强针外，最近要减少在公共场所出入的次数，有条件上网课的同学尽量上网课，没条件上网课的同学上课时也要做好防护措施，记得时刻佩戴口罩。记得勤洗手，室内多通风。从超市买回的商品，一定要做好消毒和杀菌的工作。只有提高病毒的防控意识，才能最大限度地避免感染。</p>
+                        <p>最后，2022年虽然又是以病毒肆虐开年，但是经过前两年的“抗战”，相信各位在病毒防控方面已经积累了一定的经验，我们一定能顺利平安的度过2022！</p>
+                        
+                        <p style="font-size:13px">参考：
+                            <p style="font-size:13px">1. https://covid.cdc.gov/covid-data-tracker/#variant-proportions</p>
+                            <p style="font-size:13px">2. https://zh.wikipedia.org/wiki/嚴重急性呼吸道症候群冠狀病毒2型Omicron變異株</p>
+                            <p style="font-size:13px">3. Chen, J., Wang, R., Gilby, N. B., & Wei, G. W. (2021). Omicron (B.1.1.529): Infectivity, vaccine breakthrough, and antibody resistance. ArXiv, arXiv:2112.01318v1.</p>
+                            <p style="font-size:13px">4. SARS-CoV-2 B.1.1.529 variant (Omicron) evades neutralization by sera from vaccinated and convalescent individuals https://www.medrxiv.org/content/10.1101/2021.12.08.21267491v1</p>
+                            <p style="font-size:13px">5. Lusvarghi, S., Pollett, S. D., Neerukonda, S. N., Wang, W., Wang, R., Vassell, R., Epsi, N. J., Fries, A. C., Agan, B. K., Lindholm, D. A., Colombo, C. J., Mody, R., Ewers, E. C., Lalani, T., Ganesan, A., Goguet, E., Hollis-Perry, M., Coggins, S., Simons, M. P., Katzelnick, L. C., … Weiss, C. D. (2021). SARS-CoV-2 Omicron neutralization by therapeutic antibodies, convalescent sera, and post-mRNA vaccine booster. bioRxiv : the preprint server for biology,2021.12.22.473880.https://doi.org/10.1101/2021.12.22.473880</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gazette-post-discussion-area section_padding_100 bg-gray">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
+                    <!-- Comment Area Start -->
+                    <div class="comment_area section_padding_50 clearfix">
+                        <div class="gazette-heading">
+                            <h4 class="font-bold">评论区</h4>
+                        </div>
+
+                        <ol>
+                            <!-- Single Comment Area -->
+                            <li class="single_comment_area">
+                                <div class="comment-wrapper d-md-flex align-items-start">
+                                    <!-- Comment Meta -->
+                                    <div class="comment-author">
+                                        <img src="../img/blog-img/25.jpg" alt="">
+                                    </div>
+                                    <!-- Comment Content -->
+                                    <div class="comment-content">
+                                        <h5>用户甲</h5>
+                                        <span class="comment-date font-pt text-muted">December 18, 2017</span>
+                                        <p>来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论，来自用户甲的评论。</p>
+                                        <a class="reply-btn" href="#">回复 <i class="fa fa-reply" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <ol class="children">
+                                    <li class="single_comment_area">
+                                        <div class="comment-wrapper d-md-flex align-items-start">
+                                            <!-- Comment Meta -->
+                                            <div class="comment-author">
+                                                <img src="../img/blog-img/dm-3.jpg" alt="">
+                                            </div>
+                                            <!-- Comment Content -->
+                                            <div class="comment-content">
+                                                <h5>用户乙</h5>
+                                                <span class="comment-date font-pt text-muted">December 18, 2017</span>
+                                                <p>来自用户乙的评论，来自用户乙的评论，来自用户乙的评论，来自用户乙的评论，来自用户乙的评论，来自用户乙的评论，来自用户乙的评论。</p>
+                                                <a class="reply-btn" href="#">回复 <i class="fa fa-reply" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                    <!-- Leave A Comment -->
+                    <div class="leave-comment-area clearfix">
+                        <div class="comment-form">
+                            <div class="gazette-heading">
+                                <h4 class="font-bold">留言板</h4>
+                            </div>
+                            <!-- Comment Form -->
+                            <form action="#" method="post">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="contact-name" placeholder="您的姓名">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="contact-email" placeholder="您的邮箱">
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="您的评论"></textarea>
+                                </div>
+                                <button type="submit" class="btn leave-comment-btn">提交评论<i class="fa fa-angle-right ml-2"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Area Start -->
+    <footer class="footer-area bg-img background-overlay" style="background-image: url(../img/bg-img/footer_bg.jpg);">
+        <!-- Top Footer Area -->
+        <div class="top-footer-area section_padding_100_70">
+            <div class="container">
+                <div class="row">
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="footer-widget-title">
+                                <h4 class="font-pt">国内平台</h4>
+                            </div>
+                            <ul class="footer-widget-menu">
+                                <li><a href="https://weixin.sogou.com/weixin?type=1&s_from=input&query=madison_news">微信公众号</a></li>
+                                <li><a href="https://space.bilibili.com/1911328064">哔哩哔哩</a></li>
+                                <li><a href="https://www.ximalaya.com/zhubo/224088273">喜马拉雅</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="footer-widget-title">
+                                <h4 class="font-pt">海外平台</h4>
+                            </div>
+                            <ul class="footer-widget-menu">
+                                <li><a href="https://www.facebook.com/groups/1106540679700818">Facebook</a></li>
+                                <li><a href="https://www.youtube.com/channel/UCGVsW3aDXG9-l9rQfBTuhoQ">YouTube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="footer-widget-title">
+                                <h4 class="font-pt">联系我们</h4>
+                            </div>
+                            <ul class="footer-widget-menu">
+                                <li><a href="mailto:madnews2020@gmail.com">madnews2020@gmail.com</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="single-footer-widget">
+                            <img src="../img/core-img/QR_Code.jpg" alt="QR Code" width="130" height="130">
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Footer Area -->
+        <div class="bottom-footer-area">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-12">
+                        <div class="copywrite-text">
+                            <p>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>
+                                    document.write(new Date().getFullYear());
+                                </script> 麦迪讯 All rights reserved | Template made by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Area End -->
+
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="../js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="../js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="../js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="../js/active.js"></script>
+
+</body>
+
+</html>
