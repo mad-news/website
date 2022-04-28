@@ -191,13 +191,13 @@ INSERT INTO `timages` (`imID`, `imRef`, `imAltText`, `imNote`, `imFolder`) VALUE
 (109, 'img/3_3.jpg', 'Trump\'s supporters gathering outside the Capitol by ABC', '（特朗普呼吁其支持者们撤离国会，图源：ABC News）', 'img'),
 (110, 'img/1_1.jpg', '1', "（来源：澎湃新闻，《红楼梦》插图香菱被拐）", 'img'),
 (101, 'img/1_2.jpg', '', '（图源：微博，小花梅被直播时发现）', 'img'),
-(101, 'img/1_3.jpg', '', '来源：环球时报：奥运泡泡里的高档餐厅）', 'img'),
-(101, 'img/1_4_1.jpg', '', '（来源：环球时报：瓦利耶娃泪洒赛场）', 'img'),
-(101, 'img/1_4.jpg', '', '（来源知乎：中国人均GDP分布图）', 'img'),
-(101, 'img/1_5.jpg', '', '（来源bilibili：阮玲玉《神女》名场面）', 'img'),
-(101, 'img/1_6.jpg', '', '（来源知乎：徽州的古祠堂）', 'img'),
-(101, 'img/1_7.jpg', '', '推荐一本学术专著：Masculinity and the New Imperialism, 男子气概和新帝国主义', 'img'),
-(101, 'img/1_8.jpg', '', '（王造时学长在威大时的照片）', 'img')
+(102, 'img/1_3.jpg', '', '来源：环球时报：奥运泡泡里的高档餐厅）', 'img'),
+(103, 'img/1_4_1.jpg', '', '（来源：环球时报：瓦利耶娃泪洒赛场）', 'img'),
+(104, 'img/1_4.jpg', '', '（来源知乎：中国人均GDP分布图）', 'img'),
+(105, 'img/1_5.jpg', '', '（来源bilibili：阮玲玉《神女》名场面）', 'img'),
+(106, 'img/1_6.jpg', '', '（来源知乎：徽州的古祠堂）', 'img'),
+(107, 'img/1_7.jpg', '', '推荐一本学术专著：Masculinity and the New Imperialism, 男子气概和新帝国主义', 'img'),
+(108, 'img/1_8.jpg', '', '（王造时学长在威大时的照片）', 'img')
 ;
 -- --------------------------------------------------------
 
