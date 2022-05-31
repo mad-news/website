@@ -195,7 +195,7 @@
                                             <a class="nav-link" href="../tech/Covid_Vaccine_Comparison.html">科技 Tech</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../sport/Chinese_Women_Football.html">文体 Recreation</a>
+                                            <a class="nav-link" href="../sport/Chinese_Women_Football.html">文体 | Recreation</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="../news/single-post.html">新闻评论 Commentary</a>

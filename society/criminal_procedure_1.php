@@ -199,7 +199,7 @@
                                             <a class="nav-link" href="../tech/category.html">科技 Tech</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../recreation/category.html">文体 Recreation</a>
+                                            <a class="nav-link" href="../recreation/category.html">文体 | Recreation</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="../commentary/category.html">新闻评论
