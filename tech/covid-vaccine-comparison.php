@@ -177,7 +177,7 @@
                                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">目录 Pages</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                 <a class="dropdown-item" href="../index.html">首页 Home</a>
-                                                <a class="dropdown-item" href="../category.html">分类 Category</a>
+                                                
                                                 <a class="dropdown-item" href="../about-us.html">介绍 About</a>
                                                 <a class="dropdown-item" href="../contact.html">平台 Platform</a>
                                             </div>
